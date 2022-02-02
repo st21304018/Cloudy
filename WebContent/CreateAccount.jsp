@@ -7,7 +7,7 @@
 		<title>  - OOOアカウント</title>
 	</head>
 	<body>
-		<form method='post' action="userragistration">
+		<form method='post' action="createservlet">
 			<div class="create_name_aria">
 				<input type="text" name="name" placeholder="名前" required>
 			</div>
