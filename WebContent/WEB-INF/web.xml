@@ -36,4 +36,13 @@
   	<url-pattern>/createaccountresult</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+  	<servlet-name>MainPage</servlet-name>
+  	<jsp-file>/MainPage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MainPage</servlet-name>
+  	<url-pattern>/MainPage</url-pattern>
+  </servlet-mapping>
+
 </web-app>
