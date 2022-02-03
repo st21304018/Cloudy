@@ -34,14 +34,17 @@ public class CreateAccountServlet extends HttpServlet{
 		bean.setUser_id(id);
 		bean.setPassWord(pass);
 
+		//UserCheckをインスタンス化してidをチェックするためのsql文を渡す
 		String checkSql = "select count(user_id) as count from cloudy_user where user_id='"+id+"'";
 		UserCheck user = new UserCheck();
+		//userCheckから戻り値として、IDがすでにあった場合1をそうでない場合0を受け取る、int型に変換する
 		String check = user.userCheck(checkSql);
 		int n = Integer.parseInt(check);
 
+		//userIDがすでに存在した場合createacountに戻す、そうでない場合アカウント情報をSQLにセットしてresultを表示する
 		if(n == 1) {
-			//boolean b = true;
-			//req.setAttribute("error", b);
+			String errormess = "このユーザーIDは既に使われています";
+			req.setAttribute("error", errormess);
 			RequestDispatcher dispatcher =
 				req.getRequestDispatcher("createaccount");
 			dispatcher.forward(req, res);
@@ -51,8 +54,6 @@ public class CreateAccountServlet extends HttpServlet{
 			UserSql usersql = new UserSql();
 			usersql.setAccount(bean, sql);
 
-			//HttpServletRequestの実装クラスのインスタンスに
-			//usersという名前でデータを登録する
 			req.setAttribute("name",name);
 			req.setAttribute("id",id);
 			req.setAttribute("pass",pass);
