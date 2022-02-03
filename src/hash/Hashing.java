@@ -1,9 +1,10 @@
 package hash;
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-class Hashing{
-	public static byte[] hashing(String code){
+public class Hashing{
+	public static String hashing(String code){
 		MessageDigest md5 = null;
 		try {
 			md5 = MessageDigest.getInstance("MD5");
@@ -12,6 +13,6 @@ class Hashing{
 		}
 		byte[] hashCode = md5.digest(code.getBytes());
 
-		return hashCode;
+		return String.format("%020x", new BigInteger(1, hashCode));
 	}
 }
