@@ -10,11 +10,30 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>hello</servlet-name>
-  	<servlet-class>HelloServlet</servlet-class>
+  	<servlet-name>createservlet</servlet-name>
+  	<servlet-class>CreateAccountServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>hello</servlet-name>
-  	<url-pattern>/hello</url-pattern>
+  	<servlet-name>createservlet</servlet-name>
+  	<url-pattern>/createservlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>createaccount</servlet-name>
+  	<jsp-file>/CreateAccount.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>createaccount</servlet-name>
+  	<url-pattern>/createaccount</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>createaccountresult</servlet-name>
+  	<jsp-file>/CreateAccountResult.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>createaccountresult</servlet-name>
+  	<url-pattern>/createaccountresult</url-pattern>
+  </servlet-mapping>
+
 </web-app>
