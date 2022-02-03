@@ -28,4 +28,13 @@
 		<servlet-name>login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>aca-serch</servlet-name>
+		<servlet-class>AccountSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>aca-serch</servlet-name>
+		<url-pattern>/aca-serch</url-pattern>
+	</servlet-mapping>
+
 </web-app>

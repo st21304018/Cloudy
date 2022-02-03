@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-Boolean b = (Boolean) request.getAttribute("login");
-%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,21 +7,15 @@ Boolean b = (Boolean) request.getAttribute("login");
 <title>Cloudy - ログイン</title>
 </head>
 <body>
-	<h1>Cloudyへログイン</h1>
-	<form action="login" method="post">
-		ユーザーID:<input type="text" name="name"> パスワード:<input
-			type="password" name="password"> <input type="submit"
-			value="login">
-	</form>
-	<%
-	if (b) {
-	%>
-	<p>
-		<font color="red">ログインに失敗しました。</font>
-	</p>
-	<%
-	}
-	%>
+<h1>Cloudyにログイン</h1>
+<form action="aca-serch" method="post">
+ユーザーID：<input type="text" name="userId" required><br>
+パスワード：<input type="password" name="pass" required><br>
+<input type="submit" value="ログイン"><br>
+</form>
+<p>
+<br>
+<a href="CreateAccount.jsp"><button>アカウント新規作成</button></a>
+</p>
 </body>
 </html>
-
