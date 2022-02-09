@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
@@ -36,5 +37,31 @@
 		<servlet-name>aca-serch</servlet-name>
 		<url-pattern>/aca-serch</url-pattern>
 	</servlet-mapping>
+  <servlet>
+  	<servlet-name>createservlet</servlet-name>
+  	<servlet-class>CreateAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>createservlet</servlet-name>
+  	<url-pattern>/createservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>createaccount</servlet-name>
+  	<jsp-file>/CreateAccount.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>createaccount</servlet-name>
+  	<url-pattern>/createaccount</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>createaccountresult</servlet-name>
+  	<jsp-file>/CreateAccountResult.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>createaccountresult</servlet-name>
+  	<url-pattern>/createaccountresult</url-pattern>
+  </servlet-mapping>
 
 </web-app>
