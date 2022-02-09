@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/*共通部分*/
+
+.html
+{
+	font-size: 100%;
+}
+.body
+{
+	font-family: "Yu Gothic Medium", "游ゴシック Medium",
+	YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+
+	line-height: 1.7;
+	color: #432;
+}
+.a
+{
+	text-decoration: none;
+}
+.img
+{
+	max-width: 100%;
+}
+:focus {
+    outline: none;
+}
+
+/*----------------アカウント登録------------------*/
+.createTitle{
+	font-size: 24px;
+}
+.input_area{
+	 text-align:center;
+	 margin:0 auto;
+}
+
+.inputError{
+	margin-top: 2px;
+	margin-bottom: 0;
+	text-align: left;
+	position: absolute;
+	font-size: 0.5rem;
+	color: red;
+}
+.inputValue:invalid:focus{
+	border-color: red;
+	box-shadow: 0 0 2px red;
+}
+.inputValue:valid:focus{
+	border-color: #00bfff;
+	box-shadow: 0 0 2px #00bfff;
+}
+.nameWrapper{
+	display: inline-block;
+	position: relative;
+}
+.nameError{
+	left: 3%;
+}
+.idError{
+	left: 32%;
+}
+.passError{
+	left: 32%;
+}
+input:invalid:focus + .nameError::after{
+	content: "名前を入力してください";
+}
+input:invalid:focus + .idError::after{
+	content: "8文字以内の半角英数字でユーザーIDを入力してください";
+}
+input:invalid:focus + .passError::after{
+	content: "4～8文字の半角英数字でパスワードを入力してください";
+}
+
+.inputValue{
+	margin-top: 30px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 16px;
+	padding-right: 7px;
+	border: 1px solid #C0C0C0;
+	border-radius: 5px;
+}
+
+.submit_button{
+	margin-top: 35px;
+	border: 2px solid #00bfff;
+	background: #00bfff;
+	color: #fff;
+	font-weight: bolder;
+	border-radius: 10px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 80px;
+	padding-right: 80px;
+	font-size: 1.06em;
+}
+
+.submit_button:hover{
+	background: #fff;
+	border-color: #00bfff;
+	color: #00bfff;
+	transition: 0.3s;
+}
+
+.error_mess{
+	color: #ff4500;
+}

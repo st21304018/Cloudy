@@ -4,26 +4,38 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title> 新規登録 - Cloudyアカウント</title>
+		<title> アカウント作成 - Cloudyアカウント</title>
+		<link rel="stylesheet" href="css/create.css">
 	</head>
 	<body>
-		<form method='post' action="createservlet">
-			<div class="create_name_aria">
-				<input type="text" name="name" placeholder="名前" required>
-			</div>
-			<div class="create_userID_aria">
-				<input type="text" name="id" placeholder="ユーザーID"
-				pattern=[a-zA-Z\d]{0,8} title="8文字以内の半角英数字で入力してください">
-			</div>
-			<div class="create_pass_area">
-				<input type="password" name="pass" placeholder="パスワード"
-				pattern=(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{4,8}
-				title="4～8文字の半角英数字で入力してください" required>
-			</div>
-			<div class="create_submit_button">
-				<input type='submit' value='登録'>
-			</div>
-		</form>
-		<p class="error_mess">${error}</p>
+		<div class="input_area">
+			<div><img src="images/cloudylogo.jpeg" alt="クラウディのロゴ"></div>
+			<div><h1 class="createTitle">アカウント作成</h1></div>
+			<form method='post' action="createservlet" class="form">
+				<div class="nameWrapper">
+					<input class="inputValue inputName" type="text" name="name"
+					placeholder="名前を入力してください"
+					size="80" required>
+					<p class="inputError nameError"></p>
+				</div>
+				<div class="idtWrapper">
+					<input id="id" class="inputValue inputID" type="text" name="id"
+					placeholder="ユーザーIDを入力してください" size="80"
+					pattern=[a-zA-Z\d]{0,8} required>
+					<p class="inputError idError"></p>
+				</div>
+				<div class="passWrapper">
+					<input id = "passWord" class="inputValue inputPass" type="password" name="pass"
+					placeholder="4～8文字の半角英数字でパスワードを入力してください"
+					pattern=(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{4,8} size="80"required>
+					<p class="inputError passError"></p>
+				</div>
+				<div class="create_submit_button">
+					<input class="submit_button" type='submit' value='登録する'>
+				</div>
+			</form>
+			<p class="error_mess">${error}</p>
+		</div>
+		<script src="js/createJS.js"></script>
 	</body>
 </html>
