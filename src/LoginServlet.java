@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");
 
-		RequestDispatcher rd = request.getRequestDispatcher("MainPage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("MainPage");
 		rd.forward(request, response);
 	}
 
