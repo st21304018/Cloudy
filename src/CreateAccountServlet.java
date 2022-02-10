@@ -31,7 +31,7 @@ public class CreateAccountServlet extends HttpServlet{
 		//Beanのインスタンスを作成してname, id, passをセットする
 		UserBean bean = new UserBean();
 		bean.setName(name);
-		bean.setUser_id(id);
+		bean.setUserId(id);
 		bean.setPassWord(pass);
 
 		//UserCheckをインスタンス化してidをチェックするためのsql文を渡す
