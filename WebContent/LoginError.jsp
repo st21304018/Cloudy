@@ -5,19 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Cloudy - ログイン</title>
-<link rel="stylesheet" href="css/loginSuccess.css">
+<link rel="stylesheet" href="css/loginError.css">
 </head>
+<body>
 	<div class="input_area">
 		<div>
 			<img src="images/cloudylogo.jpeg" alt="クラウディのロゴ">
 		</div>
 		<h1 class="loginTitle">Cloudyにログイン</h1>
 		<div class="text">
-		ログインが成功しました!
+		ログインに失敗しました。<br> idとパスワードをもう一度ご確認ください。<br>
 		</div>
-		<p>
-			<a href="aca-check"><button type="button" name="aaa" class="button">Cloudyをはじめよう</button></a>
-		</p>
+		<br> <a href="Login.jsp"><button class="button">ログインページへ</button></a>
 		</div>
 </body>
 </html>

@@ -1,21 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Cloudy - ログイン</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<h1>Cloudyにログイン</h1>
-<form action="aca-serch" method="post">
-ユーザーID：<input type="text" name="userId" required><br>
-パスワード：<input type="password" name="pass" required><br>
-<input type="submit" value="ログイン"><br>
-</form>
-<p>
-<br>
-<a href="CreateAccount.jsp"><button>アカウント新規作成</button></a>
-</p>
+	<div class="input_area">
+		<div>
+			<img src="images/cloudylogo.jpeg" alt="クラウディのロゴ">
+		</div>
+		<h1 class="loginTitle">Cloudyにログイン</h1>
+		<form action="aca-serch" method="post">
+			<input class="inputValue" type="text" name="userId"
+				placeholder="ユーザーIDを入力してください" size="80" pattern=[a-zA-Z\d]{0,8}
+				required><br> <input class="inputValue" type="password"
+				name="pass" placeholder="パスワードを入力してください"
+				pattern=(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{4,8} size="80" required>
+			<br>
+			<br> <input type="submit" value="ログイン" class="button"><br>
+		</form>
+		<p>
+			<br> <a href="CreateAccount.jsp"><button class="button">アカウント新規作成</button></a>
+		</p>
+	</div>
 </body>
 </html>
