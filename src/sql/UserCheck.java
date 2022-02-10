@@ -11,7 +11,7 @@ public class UserCheck{
     PreparedStatement ps = null;
 
 	public String userCheck(String sql) {
-		String check = "0";
+		String check = "1";
 
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
