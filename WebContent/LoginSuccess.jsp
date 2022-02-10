@@ -7,7 +7,6 @@
 <title>Cloudy - ログイン</title>
 <link rel="stylesheet" href="css/loginSuccess.css">
 </head>
-<body>
 	<div class="input_area">
 		<div>
 			<img src="images/cloudylogo.jpeg" alt="クラウディのロゴ">
