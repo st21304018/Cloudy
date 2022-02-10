@@ -28,13 +28,16 @@ public class AddCommentSQL {
             System.out.println("Connected....");
 
             try {
-            	String sql = "insert into cloudy_thread(th_id, th_text, th_tag,user_id) values(th_seq.nextval, ?, ?,?)";
+            	String sql = "insert into cloudy_thread(th_id, th_text, th_tag,user_id) values(?, ?, ?,?)";
 
                 PreparedStatement ps = con.prepareStatement(sql);
 
-                ps.setString(1, bo.getComment());
-                ps.setString(2,bo.getTag());
-                ps.setString(3,bo.getUser_id());
+                Integer i = bo.getId();
+                String s = i.toString();
+                ps.setString(1,"102");
+                ps.setString(2, bo.getComment());
+                ps.setString(3,bo.getTag());
+                ps.setString(4,bo.getUser_id());
 
                 // ひな形を送信
                 int r = ps.executeUpdate();
