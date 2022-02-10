@@ -8,6 +8,6 @@
 </head>
 <body>
 ログインが成功しました!
-<p><a href="/login/AccountCheck"><button type="button" name="aaa" >Cloudyをはじめよう</button></a></p>
+<p><a href="MainPage"><button type="button" name="aaa" >Cloudyをはじめよう</button></a></p>
 </body>
 </html>
