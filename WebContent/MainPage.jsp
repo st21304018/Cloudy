@@ -10,7 +10,7 @@
 <title>掲示板</title>
 </head>
 <body>
-<form action="/board/BoardServlet" method="post" name="form1" onSubmit="return check()">
+<form action="MainPage" method="post" name="form1" onSubmit="return check()">
 
 <p>コメント:<br>
 <textarea name="comment" rows="5" cols="40"></textarea>
@@ -20,7 +20,7 @@
 </form>
 
 <c:forEach var="list" items="${listAttribute}">
-<p>ID:<c:out value="${list.id}"/>　名前:<c:out value="${list.name}"/>　日付:<c:out value="${list.time}"/><br>
+<p><br>
 <c:out value="${list.comment}"/></p>
 </c:forEach>
 

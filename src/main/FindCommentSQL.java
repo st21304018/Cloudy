@@ -15,21 +15,20 @@ public class FindCommentSQL {
         // id,name,commentを格納するリスト
         List<Board> list = new ArrayList<>();
 
-        final String jdbcId = "id";
-        final String jdbcPass = "password";
-        final String jdbcUrl = "jdbc:mysql://localhost:3306/dbname?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=JST";
 
         Connection con = null;
 
         try {
 
-            con = DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
+    				"info","pro");
 
             System.out.println("Connected....");
 
             try {
                 Statement st = con.createStatement();
-                String sql = "select * from board";
+                String sql = "select th_text from cloudy_thread";
 
                 try {
                     // sqlを送信
@@ -38,10 +37,8 @@ public class FindCommentSQL {
                     while (rs.next()) {
                         // DBから取り出したid,name,commentをJavaBeansにset
                         Board bo = new Board();
-                        bo.setId(rs.getInt("id"));
-                        bo.setName(rs.getString("name"));
-                        bo.setComment(rs.getString("comment"));
-                        bo.setTime(rs.getTimestamp("time"));
+
+                        bo.setComment(rs.getString(1));
 
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
                         list.add(bo);
@@ -71,7 +68,11 @@ public class FindCommentSQL {
             e.printStackTrace();
             System.out.println("Connection Failed.");
             return null;
-        }
+        }catch (ClassNotFoundException e) {
+
+            e.printStackTrace();
+            System.out.println("Connection Failed.");
+         }
         return list;
 
     }

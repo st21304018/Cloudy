@@ -10,32 +10,34 @@ public class AddCommentSQL {
     // DBにid,name,commentを加えるメソッド
     public AddCommentSQL(Board bo) {
 
-        if(bo.getName().isEmpty()) {
-            bo.setName( "名無し");
-        }
+
         if(bo.getComment().isEmpty()) {
             bo.setComment( "コメント無し");
         }
 
 
-        final String jdbcId = "id";
-        final String jdbcPass = "password";
-        final String jdbcUrl = "jdbc:mysql://localhost:3306/dbname?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=JST";
 
         Connection con = null;
 
         try {
 
-            con = DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
+    				"info","pro");
 
             System.out.println("Connected....");
 
             try {
+            	String sql = "insert into cloudy_thread(th_id, th_text, th_tag,user_id) values(?, ?, ?,?)";
 
-                PreparedStatement ps = con.prepareStatement("INSERT INTO board (name, comment) VALUES (?, ?)");
+                PreparedStatement ps = con.prepareStatement(sql);
 
-                ps.setString(1, bo.getName());
+                Integer i = bo.getId();
+                String s = i.toString();
+                ps.setString(1,"102");
                 ps.setString(2, bo.getComment());
+                ps.setString(3,bo.getTag());
+                ps.setString(4,bo.getUser_id());
 
                 // ひな形を送信
                 int r = ps.executeUpdate();
@@ -65,7 +67,11 @@ public class AddCommentSQL {
             e.printStackTrace();
             System.out.println("Connection Failed.");
 
-        }
+        }catch (ClassNotFoundException e) {
+
+            e.printStackTrace();
+            System.out.println("Connection Failed.");
+         }
 
     }
 
