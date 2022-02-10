@@ -64,16 +64,6 @@
   	<url-pattern>/createaccountresult</url-pattern>
   </servlet-mapping>
 
-
-
-
-
-
-
-
-
-
-
   <servlet>
   	<servlet-name>MainPage</servlet-name>
   	<servlet-class>MainPageServlet</servlet-class>
@@ -84,13 +74,22 @@
   </servlet-mapping>
 
 
-<servlet>
+  <servlet>
   	<servlet-name>mainpage</servlet-name>
   	<jsp-file>/MainPage.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
   	<servlet-name>mainpage</servlet-name>
-  	<url-pattern>/mainPage</url-pattern>
+  	<url-pattern>/mainpage</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>like</servlet-name>
+  	<servlet-class>LikeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>like</servlet-name>
+  	<url-pattern>/like</url-pattern>
   </servlet-mapping>
 
 
