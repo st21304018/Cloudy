@@ -46,7 +46,7 @@ public class AccountSearchServlet extends HttpServlet {
 			rd.forward(request, response);
 
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("Error.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("LoginError.jsp");
 			rd.forward(request, response);
 		}
 	}

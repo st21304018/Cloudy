@@ -37,61 +37,69 @@
 		<servlet-name>aca-serch</servlet-name>
 		<url-pattern>/aca-serch</url-pattern>
 	</servlet-mapping>
-  <servlet>
-  	<servlet-name>createservlet</servlet-name>
-  	<servlet-class>CreateAccountServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>createservlet</servlet-name>
-  	<url-pattern>/createservlet</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>aca-check</servlet-name>
+		<servlet-class>LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>aca-check</servlet-name>
+		<url-pattern>/aca-check</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>createservlet</servlet-name>
+		<servlet-class>CreateAccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createservlet</servlet-name>
+		<url-pattern>/createservlet</url-pattern>
+	</servlet-mapping>
 
-  <servlet>
-  	<servlet-name>createaccount</servlet-name>
-  	<jsp-file>/CreateAccount.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>createaccount</servlet-name>
-  	<url-pattern>/createaccount</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>createaccount</servlet-name>
+		<jsp-file>/CreateAccount.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createaccount</servlet-name>
+		<url-pattern>/createaccount</url-pattern>
+	</servlet-mapping>
 
-  <servlet>
-  	<servlet-name>createaccountresult</servlet-name>
-  	<jsp-file>/CreateAccountResult.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>createaccountresult</servlet-name>
-  	<url-pattern>/createaccountresult</url-pattern>
-  </servlet-mapping>
-
-
-
-
-
-
-
-
-
-
-
-  <servlet>
-  	<servlet-name>MainPage</servlet-name>
-  	<servlet-class>MainPageServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>MainPage</servlet-name>
-  	<url-pattern>/MainPage</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>createaccountresult</servlet-name>
+		<jsp-file>/CreateAccountResult.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createaccountresult</servlet-name>
+		<url-pattern>/createaccountresult</url-pattern>
+	</servlet-mapping>
 
 
-<servlet>
-  	<servlet-name>mainpage</servlet-name>
-  	<jsp-file>/MainPage.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>mainpage</servlet-name>
-  	<url-pattern>/mainPage</url-pattern>
-  </servlet-mapping>
+
+
+
+
+
+
+
+
+
+	<servlet>
+		<servlet-name>MainPage</servlet-name>
+		<servlet-class>MainPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MainPage</servlet-name>
+		<url-pattern>/MainPage</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>mainpage</servlet-name>
+		<jsp-file>/MainPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mainpage</servlet-name>
+		<url-pattern>/mainPage</url-pattern>
+	</servlet-mapping>
 
 
 
