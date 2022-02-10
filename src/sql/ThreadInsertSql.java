@@ -10,8 +10,8 @@ import bean.textBean;
 public class ThreadInsertSql{
 
 	public void setText(textBean bean,String sql){
-		Connection con = null;
-	    PreparedStatement ps = null;
+		Connection con;
+	    PreparedStatement ps;
 
 
     try{
@@ -24,21 +24,17 @@ public class ThreadInsertSql{
 		System.out.println("接続完了");
 
 		//select文
-		String sql=" insert into cloudy_reply (reply_text, reply_tag) valuse(?,?)";
 
-		ps.setString(1,bean.getText());
-		ps.setString(2,bean.getText());
+		ps = con.prepareStatement(sql);
+
+		ps.setString(1, bean.getText());
+		ps.setString(2, bean.getTag());
 
 
 
 		//Statementインターフェイスを実装するクラスをインスタンス化する
-		ps = con.prepareStatement(sql);
 
 		ps.executeUpdate();
-
-
-
-
 
 		//Oracleから切断する
 		con.close();

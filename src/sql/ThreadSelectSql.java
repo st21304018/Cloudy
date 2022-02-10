@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-public class Threadsql{
-	public static void main(String[] args){
+public class ThreadSelectSql {
+	public void getThreadText(){
+		String text;
+		String tag;
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -18,32 +19,29 @@ public class Threadsql{
 				"info","pro");
 			System.out.println("接続完了");
 
-			
-		
-			
-			String replysql="select reply_text, reply_tag, reply_date,reply_likes from cloudy_reply";
-
 			Statement st=cn.createStatement();
 
+			String sql=" SELECT reply_text, reply_tag FROM emp";
 
-			ResultSet rs=st.executeQuery(replysql);
+			ResultSet rs=st.executeQuery(sql);
 
 
 			rs.next();
-			String reply_text=rs.getString (1);	//1列目のデータを取得
-			String reply_tag=rs.getString(2);	//2列目のデータを取得
-			String reply_date=rs.getString(3);	//3列目のデータを取得
-			int reply_likes=rs.getInt(4);
-			String reply_next_id=rs.getString(5);
 
+			text=rs.getString(1);
+			tag=rs.getString(2);
 
+			cn.close();
 
+			System.out.println("切断完了");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 			System.out.println("クラスがないみたい。");
 		}catch(SQLException e){
 			e.printStackTrace();
 			System.out.println("SQL関連の例外みたい。");
-	}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }
