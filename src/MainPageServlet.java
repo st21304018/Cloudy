@@ -59,7 +59,7 @@ public class MainPageServlet extends HttpServlet {
         Board bo = new Board();
 
         bo.setComment(comment);
-
+        bo.setUser_id(ub.getUserId());
         // mysqlに格納
         AddCommentLogic acl = new AddCommentLogic();
         acl.executeAddComment(bo);
