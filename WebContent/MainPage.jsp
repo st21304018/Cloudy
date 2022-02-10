@@ -5,14 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript">
-	function actionToggle() {
-		var target = document.getElementById('like');
-		target.classList.toggle('onHeart');
-		target.classList.toggle('offHeart');
-	}
-</script>
-<link rel="stylesheet" href="css/reaction.css">
+
+
 <title>掲示板</title>
 </head>
 <body>
