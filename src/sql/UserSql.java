@@ -19,7 +19,7 @@ public class UserSql{
 
             ps = con.prepareStatement(sql);
 
-            ps.setString(1, bean.getUser_id());
+            ps.setString(1, bean.getUserId());
             ps.setString(2, bean.getName());
             ps.setString(3, bean.getPassWord());
 
