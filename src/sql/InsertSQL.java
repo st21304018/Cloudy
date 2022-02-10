@@ -3,15 +3,13 @@ package sql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserCheck{
+public class InsertSQL{
 	Connection con = null;
     PreparedStatement ps = null;
 
-	public String userCheck(String sql) {
-		String check = "0";
+	public void insertSQL(String sql) {
 
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -19,11 +17,9 @@ public class UserCheck{
     				"info","pro");
 
             ps = con.prepareStatement(sql);
+            ps.executeUpdate();
 
-            ResultSet result = ps.executeQuery();
-            result.next();
-            check = result.getString("count");
-
+            System.out.println("書き込み完了");
             ps.close();
             con.close();
 		}catch(ClassNotFoundException e){
@@ -38,7 +34,5 @@ public class UserCheck{
 			e.printStackTrace();
 			e.getMessage();
 		}
-
-		return check;
 	}
 }
