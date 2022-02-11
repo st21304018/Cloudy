@@ -1,6 +1,8 @@
 package bean;
 
-public class SelectBean {
+import java.io.Serializable;
+
+public class SelectBean implements Serializable {
 
 	private String text;
 	private String tag;
