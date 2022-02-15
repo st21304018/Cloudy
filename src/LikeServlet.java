@@ -48,7 +48,7 @@ public class LikeServlet extends HttpServlet {
 		map.put(bean.getId(), bean);
 
 		session.setAttribute("map", map);
-		RequestDispatcher dis = req.getRequestDispatcher("mainPage");
+		RequestDispatcher dis = req.getRequestDispatcher("mainpage");
 		dis.forward(req, resp);
 	}
 
