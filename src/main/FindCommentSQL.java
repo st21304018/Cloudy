@@ -5,15 +5,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import bean.UserBean;
+import logic.LikeCheckLogic;
 
 public class FindCommentSQL {
 
-    public List<Board> findcomment() {
+    public Map<Integer, Board> findcomment(UserBean ubean) {
 
         // id,name,commentを格納するリスト
-        List<Board> list = new ArrayList<>();
+        Map<Integer, Board> list = new TreeMap<>();
 
 
         Connection con = null;
@@ -28,7 +31,7 @@ public class FindCommentSQL {
 
             try {
                 Statement st = con.createStatement();
-                String sql = "select th_text from cloudy_thread";
+                String sql = "select th_id, th_text, th_likes, user_id from cloudy_thread";
 
                 try {
                     // sqlを送信
@@ -38,10 +41,14 @@ public class FindCommentSQL {
                         // DBから取り出したid,name,commentをJavaBeansにset
                         Board bo = new Board();
 
-                        bo.setComment(rs.getString(1));
+                        bo.setId(rs.getInt("th_id"));
+                        bo.setComment(rs.getString("th_text"));
+                		bo.setLikes(rs.getInt("th_likes"));
+                		bo.setUser_id(rs.getString("user_id"));
+                		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
 
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
-                        list.add(bo);
+                        list.put(bo.getId(), bo);
                     }
 
                     rs.close();

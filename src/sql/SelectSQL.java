@@ -1,17 +1,16 @@
 package sql;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserCheck{
-	Connection con = null;
-    PreparedStatement ps = null;
-    String check;
+public class SelectSQL {
+	public int selectSQL(String sql) {
+		Connection con = null;
+	    PreparedStatement ps = null;
+	    int i = 0;
 
-	public String userCheck(String sql) {
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
             con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
@@ -21,7 +20,7 @@ public class UserCheck{
 
             ResultSet result = ps.executeQuery();
             result.next();
-            check = result.getString(1);
+            i = result.getInt(1);
 
             ps.close();
             con.close();
@@ -37,11 +36,7 @@ public class UserCheck{
 			e.printStackTrace();
 			e.getMessage();
 		}
-		if(check.equals("0")) {
-			return null;
-		}else {
-			return "1";
-		}
-
+		return i;
 	}
+
 }

@@ -96,7 +96,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mainpage</servlet-name>
-		<url-pattern>/mainPage</url-pattern>
+		<url-pattern>/mainpage</url-pattern>
 	</servlet-mapping>
 
 
@@ -105,6 +105,27 @@
 
 
 
+
+
+
+
+  <servlet>
+  	<servlet-name>threadpageservlet</servlet-name>
+  	<servlet-class>ThreadPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>threadpageservlet</servlet-name>
+  	<url-pattern>/threadpageservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>threadpage</servlet-name>
+  	<jsp-file>/ThreadPage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>threadpage</servlet-name>
+  	<url-pattern>/threadpage</url-pattern>
+  </servlet-mapping>
 
 
 

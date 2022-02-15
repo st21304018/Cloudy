@@ -20,7 +20,7 @@
 				name="pass" placeholder="パスワードを入力してください"
 				pattern=(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{4,8} size="80" required>
 			<br>
-			<br> <input type="submit" value="ログイン" class="button"><br>
+			<br><input type="submit" value="ログイン" class="button"><br>
 		</form>
 		<p>
 			<br> <a href="CreateAccount.jsp"><button class="button">アカウント新規作成</button></a>
