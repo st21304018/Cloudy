@@ -73,7 +73,7 @@ public class MainPageServlet extends HttpServlet {
         HttpSession commentSession = request.getSession();
         commentSession.setAttribute("map", map);
 
-        RequestDispatcher rd =request.getRequestDispatcher("MainPage.jsp");
+        RequestDispatcher rd =request.getRequestDispatcher("mainpage");
         rd.forward(request, response);
 
     }
