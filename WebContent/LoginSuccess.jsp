@@ -16,7 +16,7 @@
 		ログインが成功しました!
 		</div>
 		<p>
-			<a href="aca-check"><button type="button" name="aaa" class="button">Cloudyをはじめよう</button></a>
+			<a href="MainPage"><button type="button" name="aaa" class="button">Cloudyをはじめよう</button></a>
 		</p>
 		</div>
 </body>

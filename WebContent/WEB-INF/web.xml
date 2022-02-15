@@ -96,7 +96,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mainpage</servlet-name>
-		<url-pattern>/mainPage</url-pattern>
+		<url-pattern>/mainpage</url-pattern>
 	</servlet-mapping>
 
 
