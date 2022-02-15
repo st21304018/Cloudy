@@ -29,7 +29,8 @@
 
 	<c:forEach var="list" items="${list}">
 
-	<p><c:out value="${list.text}"/></p>
+	<p><c:out value="${list.value.text}"/></p>
+	<p><c:out value="${list.value.time}"/></p>
 
 	</c:forEach>
 <body>

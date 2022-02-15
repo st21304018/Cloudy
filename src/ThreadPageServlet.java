@@ -1,6 +1,6 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,17 +23,17 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String threadid = req.getParameter("e");
 
-		String sql = "select th_text from cloudy_thread where th_id = '" + threadid + "'";
+		String sql = "select th_text,th_date from cloudy_thread where th_id = '" + threadid + "'";
 
 		ThreadSelectSql tss = new ThreadSelectSql();
 		sb = tss.ThreadText(sql);
 
 		String text = sb.getText();
 
-		List<SelectBean> list = new ArrayList<SelectBean>();
+		Map<Integer,SelectBean> list = new TreeMap<Integer,SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text from cloudy_reply where th_id = '" + threadid + "'";
+		String replysql = "Select reply_text,reply_date,user_id,reply_tag,reply_date,th_id from cloudy_reply where th_id = '" + threadid + "'";
 
 		list = rs.replySelect(replysql);
 
@@ -71,10 +71,10 @@ public class ThreadPageServlet extends HttpServlet {
 
 
 
-		List<SelectBean> list = new ArrayList<SelectBean>();
+		Map<Integer,SelectBean> list = new TreeMap<Integer,SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text from cloudy_reply where th_id = '" + threadid + "'";
+		String replysql = "Select reply_text,reply_date,user_id,reply_tag,reply_date,th_id from cloudy_reply where th_id = '" + threadid + "'";
 
 		list = rs.replySelect(replysql);
 

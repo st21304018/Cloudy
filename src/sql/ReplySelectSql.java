@@ -5,22 +5,22 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import bean.SelectBean;
 
 public class ReplySelectSql {
 
-	public List<SelectBean> replySelect(String sql) {
+	public Map<Integer,SelectBean> replySelect(String sql) {
 
-		List<SelectBean> list = new ArrayList<>();
+		Map<Integer,SelectBean> list = new TreeMap<Integer,SelectBean>();
 
 		try {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			//Oracleに接続する
+
 			Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
 					"info", "pro");
 			System.out.println("接続完了");
@@ -29,19 +29,20 @@ public class ReplySelectSql {
 
 			Statement st = cn.createStatement();
 
-			// sqlを送信
+
 			ResultSet rs = st.executeQuery(sql);
 
 			while (rs.next()) {
-				// DBから取り出したid,name,commentをJavaBeansにset
+
 				SelectBean sb = new SelectBean();
 				sb.setText(rs.getString(1));
-				//bo.setName(rs.getString("name"));
-				//bo.setComment(rs.getString("comment"));
-				//bo.setTime(rs.getTimestamp("time"));
+				sb.setTime(rs.getString(2));
+				//sb.setUser_id(rs.getInt(3));
+				//sb.setTag(rs.getString(4));
+				//sb.setTh_id(rs.getInt(5));
 
-				// リストに1個ずつ格納。末尾に要素が追加されていく。
-				list.add(sb);
+
+				list.put(sb.getTh_id(),sb);
 			}
 
 			rs.close();
