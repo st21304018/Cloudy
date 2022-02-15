@@ -39,10 +39,9 @@ public class CreateAccountServlet extends HttpServlet{
 		UserCheck user = new UserCheck();
 		//userCheckから戻り値として、IDがすでにあった場合1をそうでない場合0を受け取る、int型に変換する
 		String check = user.userCheck(checkSql);
-		int n = Integer.parseInt(check);
 
 		//userIDがすでに存在した場合createacountに戻す、そうでない場合アカウント情報をSQLにセットしてresultを表示する
-		if(n == 1) {
+		if(check != null) {
 			String errormess = "このユーザーIDは既に使われています";
 			req.setAttribute("error", errormess);
 			RequestDispatcher dispatcher =
