@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript">
-	function actionToggle() {
-		var target = document.getElementById('like');
+	function actionToggle(threadID) {
+		var id = threadID + 'like';
+		console.log(id);
+		var target = document.getElementById(id);
 		target.classList.toggle('onHeart');
 		target.classList.toggle('offHeart');
 	}
@@ -25,24 +27,22 @@
 </p>
 </form>
 
-<c:forEach var="list" items="${listAttribute}">
-<p><br>
-<c:out value="${list.comment}"/></p>
-<div class="likes-area">
-	<form method="POST" action="like">
-		<input type="hidden" name="threadID" value="${id}">
-		<input type="hidden" name="check" value="${check}">
-		<div id="like" class="input-wrapper offHeart">
-			<c:if test="${!empty check}">
+<c:forEach var="map" items="${map}">
+	<p><br>
+	<c:out value="${map.value.comment}"/>
+	</p>
+	<div class="likes-area">
+		<div id="${map.value.id}like" class="input-wrapper offHeart">
+			<c:if test="${not empty map.value.check}">
 				<script>
-					actionToggle();
+					var threadID = ${map.value.id};
+					actionToggle(threadID);
 				</script>
 			</c:if>
-			<input class="input-submit" type="submit" value="">
+			<a href="like?e=${map.value.id}" class="input-submit"></a>
 		</div>
-		<p class="like_count">${list.likes}</p>
-	</form>
-</div>
+		<p class="like_count">${map.value.likes}</p>
+	</div>
 </c:forEach>
 
 </body>

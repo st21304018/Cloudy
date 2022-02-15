@@ -9,6 +9,7 @@ public class Board implements Serializable {
     private String tag;
     private String comment;
     private String time;
+    private String check;
 
 
 
@@ -48,6 +49,12 @@ public class Board implements Serializable {
 	}
 	public void setTag(String tag) {
 		this.tag = tag;
+	}
+	public String getCheck() {
+		return check;
+	}
+	public void setCheck(String check) {
+		this.check = check;
 	}
 
 }

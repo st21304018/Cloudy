@@ -1,7 +1,7 @@
 
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,14 +28,15 @@ public class MainPageServlet extends HttpServlet {
         //リスナークラスに移動したい
         request.setCharacterEncoding("UTF-8");
 
-
+        HttpSession session = request.getSession();
+        UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
         // 既存のコメントを確認
         FindCommentLogic fcl = new FindCommentLogic();
-        List<Board> list = fcl.executeFindComment();
+        Map<Integer, Board> map = fcl.executeFindComment(ub);
 
         // セッションスコープにコメントリストを保存
-        request.setAttribute("listAttribute", list);
+        session.setAttribute("map", map);
 
         RequestDispatcher rd =request.getRequestDispatcher("mainpage");
         rd.forward(request, response);
@@ -66,11 +67,11 @@ public class MainPageServlet extends HttpServlet {
 
         // 今入力されたコメントと既存のコメントをmysqlから取得
         FindCommentLogic fcl = new FindCommentLogic();
-        List<Board> list = fcl.executeFindComment();
+        Map<Integer, Board> map = fcl.executeFindComment(ub);
 
         // セッションスコープにコメントリストを保存
         HttpSession commentSession = request.getSession();
-        commentSession.setAttribute("listAttribute", list);
+        commentSession.setAttribute("map", map);
 
         RequestDispatcher rd =request.getRequestDispatcher("MainPage.jsp");
         rd.forward(request, response);

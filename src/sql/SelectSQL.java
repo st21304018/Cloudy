@@ -1,25 +1,27 @@
 package sql;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class InsertSQL {
-	Connection con = null;
-    PreparedStatement ps = null;
+public class SelectSQL {
+	public int selectSQL(String sql) {
+		Connection con = null;
+	    PreparedStatement ps = null;
+	    int i = 0;
 
-	public void insertSQL(String sql) {
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
             con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
     				"info","pro");
-            con.setAutoCommit(false);
 
             ps = con.prepareStatement(sql);
-            ps.executeUpdate();
 
-            con.commit();
+            ResultSet result = ps.executeQuery();
+            result.next();
+            i = result.getInt(1);
+
             ps.close();
             con.close();
 		}catch(ClassNotFoundException e){
@@ -34,5 +36,7 @@ public class InsertSQL {
 			e.printStackTrace();
 			e.getMessage();
 		}
+		return i;
 	}
+
 }
