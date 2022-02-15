@@ -72,16 +72,14 @@
 		<url-pattern>/createaccountresult</url-pattern>
 	</servlet-mapping>
 
-
-
-
-
-
-
-
-
-
-
+	<servlet>
+		<servlet-name>like</servlet-name>
+		<servlet-class>LikeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>like</servlet-name>
+		<url-pattern>/like</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>MainPage</servlet-name>
 		<servlet-class>MainPageServlet</servlet-class>
@@ -98,17 +96,6 @@
 		<servlet-name>mainpage</servlet-name>
 		<url-pattern>/mainpage</url-pattern>
 	</servlet-mapping>
-
-
-
-
-
-
-
-
-
-
-
   <servlet>
   	<servlet-name>threadpageservlet</servlet-name>
   	<servlet-class>ThreadPageServlet</servlet-class>
@@ -126,7 +113,5 @@
   	<servlet-name>threadpage</servlet-name>
   	<url-pattern>/threadpage</url-pattern>
   </servlet-mapping>
-
-
 
 </web-app>
