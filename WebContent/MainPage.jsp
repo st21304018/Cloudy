@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,32 +18,40 @@
 <title>掲示板</title>
 </head>
 <body>
-<form action="MainPage" method="post" name="form1" onSubmit="return check()">
+	<form action="MainPage" method="post" name="form1"
+		onSubmit="return check()">
 
-<p>コメント:<br>
-<textarea name="comment" rows="5" cols="40"></textarea>
-</p>
-<p><input type="submit" value="TWEET">
-</p>
-</form>
+		<p>
+			コメント:<br>
+			<textarea name="comment" rows="5" cols="40"></textarea>
+		</p>
+		<p>
+			<input type="submit" value="TWEET">
+		</p>
+	</form>
 
-<c:forEach var="map" items="${map}">
-	<p><br>
-	<c:out value="${map.value.comment}"/>
+	<p>
+		<a href="MyPage"><button type="button" name="aaa" class="button">マイページ</button></a>
 	</p>
-	<div class="likes-area">
-		<div id="${map.value.id}like" class="input-wrapper offHeart">
-			<c:if test="${not empty map.value.check}">
-				<script>
-					var threadID = ${map.value.id};
-					actionToggle(threadID);
-				</script>
-			</c:if>
-			<a href="like?e=${map.value.id}" class="input-submit"></a>
+
+	<c:forEach var="map" items="${map}">
+		<p>
+			<br>
+			<c:out value="${map.value.comment}" />
+		</p>
+		<div class="likes-area">
+			<div id="${map.value.id}like" class="input-wrapper offHeart">
+				<c:if test="${not empty map.value.check}">
+					<script>
+						var threadID = ${map.value.id};
+						actionToggle(threadID);
+					</script>
+				</c:if>
+				<a href="like?e=${map.value.id}" class="input-submit"></a>
+			</div>
+			<p class="like_count">${map.value.likes}</p>
 		</div>
-		<p class="like_count">${map.value.likes}</p>
-	</div>
-</c:forEach>
+	</c:forEach>
 
 </body>
 </html>

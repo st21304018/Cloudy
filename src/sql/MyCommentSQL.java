@@ -2,11 +2,12 @@ package sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import bean.Board;
 import bean.UserBean;
@@ -18,11 +19,9 @@ public class MyCommentSQL {
 
 
 		// id,name,commentを格納するリスト
-		Map<Integer, Board> list = new TreeMap<>();
+		Map<Integer, Board> list = new LinkedHashMap<>();
 
 		Connection con = null;
-
-		String user_id = ubean.getUserId();
 
 		try {
 
@@ -35,10 +34,13 @@ public class MyCommentSQL {
 			try {
 				Statement st = con.createStatement();
 				String sql = "select th_id, th_text, th_likes, user_id from cloudy_thread where user_id = ?";
+				PreparedStatement ps= con.prepareStatement(sql);
+                ps.setString(1, ubean.getUserId());
+
 
 				try {
 					// sqlを送信
-					ResultSet rs = st.executeQuery(sql);
+					ResultSet rs = ps.executeQuery();
 
 					while (rs.next()) {
 						// DBから取り出したid,name,commentをJavaBeansにset
