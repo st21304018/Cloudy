@@ -27,10 +27,10 @@
 
 	</form>
 
-	<c:forEach var="list" items="${list}">
+	<c:forEach var="map" items="${map}">
 
-	<p><c:out value="${list.value.text}"/></p>
-	<p><c:out value="${list.value.time}"/></p>
+	<p><c:out value="${map.value.text}"/></p>
+	<p><c:out value="${map.value.time}"/></p>
 
 	</c:forEach>
 <body>
