@@ -28,9 +28,10 @@ public class ThreadSelectSql {
 			rs.next();
 			sb.setText(rs.getString(1));
 			sb.setTime(rs.getString(2));
-			//sb.setUser_id(rs.getInt(3)
-			//sb.setTag(rs.getString(4));
-			//sb.setTh_id(rs.getInt(5));
+			sb.setUserid(rs.getInt(3));
+			sb.setTag(rs.getString(4));
+			sb.setUserName(rs.getString(5));
+			//sb.setTh_id(rs.getInt(6));
 
 			cn.close();
 

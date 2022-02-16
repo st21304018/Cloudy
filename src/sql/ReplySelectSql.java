@@ -37,9 +37,10 @@ public class ReplySelectSql {
 				SelectBean sb = new SelectBean();
 				sb.setText(rs.getString(1));
 				sb.setTime(rs.getString(2));
-				//sb.setUser_id(rs.getInt(3));
-				//sb.setTag(rs.getString(4));
-				//sb.setTh_id(rs.getInt(5));
+				sb.setUserid(rs.getInt(3));
+				sb.setTag(rs.getString(4));
+				sb.setTh_id(rs.getInt(5));
+				//sb.setUserName(rs.getString(6));
 
 
 				list.put(sb.getTh_id(),sb);
