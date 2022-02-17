@@ -1,15 +1,15 @@
 package logic;
 
-import bean.UserBean;
 import main.Board;
-import sql.UserCheck;
+import sql.Username;
+
 
 public class UsernameLogic {
-	public String NameLogic(Board bean, UserBean ubean) {
-		String sql = "select count(*) from cloudy_like where user_id='"+ubean.getUserId()+"' and th_id="+ bean.getId()+"";
-		UserCheck check = new UserCheck();
-		String ch = check.userCheck(sql);
+	public String nameLogic(Board bo) {
+		String sql = "select user_name from cloudy_user where user_id='"+bo.getUser_id()+"'";
+		Username un = new Username();
+		String name = un.username(sql);
 
-		return ch;
+		return name;
 	}
 }
