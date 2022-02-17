@@ -60,10 +60,10 @@
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="top-img skip-img"></p><p class="skip-top skip-text">Top</p>
+						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
-						<img class="mypage-img skip-img" src="images/profile-skip.svg"><p class="skip-mypage skip-text">MyPage</p>
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
 					<a class="skip-link" href="logout"><div class="logout-button skip-button">
 						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
