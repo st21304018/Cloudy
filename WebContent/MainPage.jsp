@@ -63,7 +63,7 @@
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
 						<p class="skip-top">Top</p>
 					</div></a>
-					<a class="skip-link" href="mypage"><div class="mypage-button skip-button">
+					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
 						<p class="skip-mypage">MyPage</p>
 					</div></a>
 					<input type="button" class="putButton" onclick="showForm()"
