@@ -62,7 +62,7 @@ public class ThreadPageServlet extends HttpServlet {
 
 		HttpSession session = req.getSession();//sessionを入手
 		String threadid = (String) session.getAttribute("th_id");//beanを入手
-		String userid = (String) session.getAttribute("user_id");
+		//String userid = (String) session.getAttribute("user_id");
 
 		String text = req.getParameter("text");
 		String tag = req.getParameter("tag");
@@ -82,7 +82,7 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String replysql = "Select reply_text,reply_date,user_id,reply_tag,reply_date,th_id,user_name,user_id from cloudy_reply where th_id = '"
 				+ threadid + "'";
-		String usersql = "select user_name from cloudy_user where th_id = '"+threadid+"'";
+		//String usersql = "select user_name from cloudy_user where th_id = '"+threadid+"'";
 		map = rs.replySelect(replysql);
 
 		req.setAttribute("map", map);
