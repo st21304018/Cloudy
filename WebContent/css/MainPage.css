@@ -37,6 +37,7 @@ body {
 }
 .thread_page{
 	position: relative;
+	height: 100%;
 }
 .main-page{
 	display: flex;
