@@ -1,4 +1,4 @@
-package main;
+package bean;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ public class Board implements Serializable {
     private String comment;
     private String time;
     private String check;
-
+    private String user_name;
 
 
     public String getTime() {
@@ -55,6 +55,12 @@ public class Board implements Serializable {
 	}
 	public void setCheck(String check) {
 		this.check = check;
+	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 }

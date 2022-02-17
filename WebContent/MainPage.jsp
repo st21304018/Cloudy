@@ -34,7 +34,6 @@
 <title>掲示板</title>
 </head>
 
-
 <body>
 	<div id="thread" class="thread_page">
 		<!---- input-box ---->
@@ -81,13 +80,17 @@
 				</div>
 			</aside>
 			<!-- ---/left-side--- -->
-
 			<article class="main-area">
 				<c:forEach var="map" items="${map}">
 					<a href="threadpageservlet?e=${map.value.id}">
-						<p>
-							<br>
-							<c:out value="${map.value.comment}" />
+						<p><br>
+						<c:out value="${map.value.user_name}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.comment}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.time}"/>
 						</p>
 					</a>
 					<div class="likes-area">

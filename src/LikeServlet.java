@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Board;
 import bean.UserBean;
 import logic.DecrementLogic;
 import logic.IncrementLogic;
-import main.Board;
 import sql.InsertSQL;
 import sql.SelectSQL;
 
