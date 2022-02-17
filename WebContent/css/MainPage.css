@@ -76,6 +76,10 @@ body {
 .skip-link p{
 	margin: 0;
 }
+.skip-img{
+	width: 50px;
+	display: inline;
+}
 .putButton{
 	outline: none;
 	border: 2px solid #00BFFF;
