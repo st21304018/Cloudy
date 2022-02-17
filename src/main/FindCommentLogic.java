@@ -2,6 +2,7 @@ package main;
 
 import java.util.Map;
 
+import bean.Board;
 import bean.UserBean;
 
 public class FindCommentLogic {

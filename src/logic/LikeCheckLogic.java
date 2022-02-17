@@ -1,7 +1,7 @@
 package logic;
 
+import bean.Board;
 import bean.UserBean;
-import main.Board;
 import sql.UserCheck;
 
 public class LikeCheckLogic {

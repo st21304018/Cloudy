@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Board;
 import bean.UserBean;
 import logic.DecrementLogic;
 import logic.IncrementLogic;
-import main.Board;
 import sql.InsertSQL;
 import sql.SelectSQL;
 
@@ -19,7 +19,7 @@ public class LikeServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		TreeMap<Integer, Board> map = (TreeMap<Integer, Board>)session.getAttribute("map");
+		LinkedHashMap<Integer, Board> map = (LinkedHashMap<Integer, Board>)session.getAttribute("map");
 		int threadId = Integer.parseInt(req.getParameter("e"));
 		UserBean ub = (UserBean) session.getAttribute("account");
 		Board bean = map.get(threadId);

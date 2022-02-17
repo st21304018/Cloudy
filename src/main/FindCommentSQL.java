@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import bean.Board;
 import bean.UserBean;
 import logic.LikeCheckLogic;
 import logic.UsernameLogic;
@@ -32,7 +33,9 @@ public class FindCommentSQL {
 
             try {
                 Statement st = con.createStatement();
-                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi') from cloudy_thread";
+
+                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi') from cloudy_thread order by th_id desc";
+
 
                 try {
                     // sqlを送信

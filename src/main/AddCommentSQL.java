@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import bean.Board;
+
 public class AddCommentSQL {
 
     // DBにid,name,commentを加えるメソッド
