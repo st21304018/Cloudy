@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.SelectBean;
+import bean.UserBean;
 import bean.textBean;
 import sql.ReplySelectSql;
 import sql.ThreadInsertSql;
@@ -28,10 +29,7 @@ public class ThreadPageServlet extends HttpServlet {
 		ThreadSelectSql tss = new ThreadSelectSql();
 		sb = tss.ThreadText(sql);
 
-		String text = sb.getText();
-		String date = sb.getTime();
-		String tag = sb.getTag();
-		String name = sb.getUsername();
+		req.setAttribute("bean", sb);
 
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
@@ -43,10 +41,6 @@ public class ThreadPageServlet extends HttpServlet {
 
 		HttpSession session = req.getSession(); //sessionを入手
 		session.setAttribute("th_id", threadid);
-		session.setAttribute("threadtext", text);
-		session.setAttribute("date", date);
-		session.setAttribute("th_tag", tag);
-		session.setAttribute("user_name", name);
 
 		req.setAttribute("map", map);
 
@@ -62,17 +56,18 @@ public class ThreadPageServlet extends HttpServlet {
 
 		HttpSession session = req.getSession();//sessionを入手
 		String threadid = (String) session.getAttribute("th_id");//beanを入手
-		//String userid = (String) session.getAttribute("user_id");
+		UserBean ub = (UserBean) session.getAttribute("account");
 
 		String text = req.getParameter("text");
 		String tag = req.getParameter("tag");
+
 
 		textBean bean = new textBean();
 		bean.setText(text);
 		bean.setTag(tag);
 
-		String sql = " insert into cloudy_reply(reply_id,reply_text,reply_tag,th_id,user_name) values(reply_seq.nextval,?,?,"
-				+ threadid + ")";
+		String sql = " insert into cloudy_reply(reply_id,reply_text,reply_tag,th_id,user_id) values(reply_seq.nextval,?,?,"
+				+ threadid + ",'"+ub.getUser_id()+"')";
 
 		ThreadInsertSql in = new ThreadInsertSql();
 		in.setText(bean, sql);
@@ -80,7 +75,7 @@ public class ThreadPageServlet extends HttpServlet {
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,reply_date,user_id,reply_tag,reply_date,th_id,user_name,user_id from cloudy_reply where th_id = '"
+		String replysql = "Select reply_text,reply_date,user_id,reply_tag, th_id from cloudy_reply where th_id = '"
 				+ threadid + "'";
 		//String usersql = "select user_name from cloudy_user where th_id = '"+threadid+"'";
 		map = rs.replySelect(replysql);

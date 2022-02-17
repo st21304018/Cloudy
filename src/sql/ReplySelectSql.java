@@ -35,12 +35,11 @@ public class ReplySelectSql {
 			while (rs.next()) {
 
 				SelectBean sb = new SelectBean();
-				sb.setText(rs.getString(1));
-				sb.setTime(rs.getString(2));
-				sb.setUserid(rs.getInt(3));
-				sb.setTag(rs.getString(4));
-				sb.setTh_id(rs.getInt(5));
-				//sb.setUserName(rs.getString(6));
+				sb.setText(rs.getString("reply_text"));
+				sb.setTime(rs.getString("reply_date"));
+				sb.setTag(rs.getString("reply_tag"));
+				sb.setTh_id(rs.getInt("th_id"));
+
 
 
 				list.put(sb.getTh_id(),sb);
