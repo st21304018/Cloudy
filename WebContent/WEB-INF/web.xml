@@ -96,22 +96,40 @@
 		<servlet-name>mainpage</servlet-name>
 		<url-pattern>/mainpage</url-pattern>
 	</servlet-mapping>
-  <servlet>
-  	<servlet-name>threadpageservlet</servlet-name>
-  	<servlet-class>ThreadPageServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>threadpageservlet</servlet-name>
-  	<url-pattern>/threadpageservlet</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>threadpageservlet</servlet-name>
+		<servlet-class>ThreadPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>threadpageservlet</servlet-name>
+		<url-pattern>/threadpageservlet</url-pattern>
+	</servlet-mapping>
 
-  <servlet>
-  	<servlet-name>threadpage</servlet-name>
-  	<jsp-file>/ThreadPage.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>threadpage</servlet-name>
-  	<url-pattern>/threadpage</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>threadpage</servlet-name>
+		<jsp-file>/ThreadPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>threadpage</servlet-name>
+		<url-pattern>/threadpage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MyPage</servlet-name>
+		<servlet-class>MyPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyPage</servlet-name>
+		<url-pattern>/MyPage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>mypage</servlet-name>
+		<jsp-file>/MyPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mypage</servlet-name>
+		<url-pattern>/mypage</url-pattern>
+	</servlet-mapping>
 
 </web-app>

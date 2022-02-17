@@ -34,7 +34,6 @@
 <title>掲示板</title>
 </head>
 
-
 <body>
 	<div id="thread" class="thread_page">
 		<!---- input-box ---->

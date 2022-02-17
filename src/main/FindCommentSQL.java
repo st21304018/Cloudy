@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import bean.Board;
 import bean.UserBean;
 import logic.LikeCheckLogic;
 
