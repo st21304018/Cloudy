@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import bean.UserBean;
 import logic.LikeCheckLogic;
@@ -16,7 +16,7 @@ public class FindCommentSQL {
     public Map<Integer, Board> findcomment(UserBean ubean) {
 
         // id,name,commentを格納するリスト
-        Map<Integer, Board> list = new TreeMap<>();
+        Map<Integer, Board> list = new LinkedHashMap<>();
 
 
         Connection con = null;
