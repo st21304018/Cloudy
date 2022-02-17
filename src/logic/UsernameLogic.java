@@ -1,6 +1,6 @@
 package logic;
 
-import main.Board;
+import bean.Board;
 import sql.Username;
 
 
