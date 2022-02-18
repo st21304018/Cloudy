@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import bean.SelectBean;
+import bean.UserBean;
+import logic.LikeCheckLogic;
 import logic.ThreadNamelogic;
 
 public class ThreadSelectSql {
 	SelectBean sb = new SelectBean();
 
-	public SelectBean ThreadText(String sql) {
+	public SelectBean ThreadText(String sql, UserBean ubean) {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -32,8 +34,8 @@ public class ThreadSelectSql {
 			sb.setUserid(rs.getString("user_id"));
 			sb.setTag(rs.getString("th_tag"));
 			sb.setName(new ThreadNamelogic().nameLogic(sb));
-
-
+			sb.setLikes(rs.getInt("th_likes"));
+			sb.setCheck(new LikeCheckLogic().likeRepLogic(sb, ubean));
 			cn.close();
 
 			System.out.println("切断完了");

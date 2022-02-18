@@ -81,6 +81,14 @@
 		<url-pattern>/like</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>likerep</servlet-name>
+		<servlet-class>LikeRepServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>likerep</servlet-name>
+		<url-pattern>/likerep</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>MainPage</servlet-name>
 		<servlet-class>MainPageServlet</servlet-class>
 	</servlet>

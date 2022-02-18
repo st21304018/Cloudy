@@ -25,29 +25,29 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String threadid = req.getParameter("e");
 
-		String sql = "select th_text,th_date,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
+		HttpSession session = req.getSession();
+		UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
+
+		String sql = "select th_text,th_date,th_tag,user_id, th_likes from cloudy_thread where th_id = '" + threadid + "'";
 
 		ThreadSelectSql tss = new ThreadSelectSql();
-		sb = tss.ThreadText(sql);
+		sb = tss.ThreadText(sql, ub);
 
-
-
-		HttpSession session = req.getSession();
 		session.setAttribute("sb", sb);
 
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,reply_date,user_id,reply_tag,th_id,reply_id "
+		String replysql = "Select reply_text,reply_date,user_id,reply_tag,th_id,reply_id, reply_likes "
 				+ "from cloudy_reply where th_id = '" + threadid + "'";
 
-		map = rs.replySelect(replysql);
+		map = rs.replySelect(replysql, ub);
 
 
 		session.setAttribute("th_id", threadid);
 
 
-		req.setAttribute("map", map);
+		session.setAttribute("map", map);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("threadpage");
 
@@ -80,12 +80,12 @@ public class ThreadPageServlet extends HttpServlet {
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,reply_date,user_id,reply_tag, th_id ,reply_id from cloudy_reply where th_id = '"
-				+ threadid + "'";
+		String replysql = "Select reply_text,reply_date,user_id,reply_tag,th_id,reply_id, reply_likes "
+				+ "from cloudy_reply where th_id = '" + threadid + "'";
 
-		map = rs.replySelect(replysql);
+		map = rs.replySelect(replysql, ub);
 
-		req.setAttribute("map", map);
+		session.setAttribute("map", map);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("threadpage");
 
