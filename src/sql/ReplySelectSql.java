@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import bean.SelectBean;
 
@@ -14,7 +14,7 @@ public class ReplySelectSql {
 
 	public Map<Integer,SelectBean> replySelect(String sql) {
 
-		Map<Integer,SelectBean> list = new TreeMap<Integer,SelectBean>();
+		Map<Integer,SelectBean> map = new LinkedHashMap<Integer,SelectBean>();
 
 		try {
 
@@ -39,10 +39,11 @@ public class ReplySelectSql {
 				sb.setTime(rs.getString("reply_date"));
 				sb.setTag(rs.getString("reply_tag"));
 				sb.setTh_id(rs.getInt("th_id"));
+				sb.setReply_id(rs.getInt("reply_id"));
 
 
 
-				list.put(sb.getTh_id(),sb);
+				map.put(sb.getReply_id(),sb);
 			}
 
 			rs.close();
@@ -58,7 +59,7 @@ public class ReplySelectSql {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		return map;
 
 	}
 

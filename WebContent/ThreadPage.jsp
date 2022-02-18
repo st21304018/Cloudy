@@ -15,8 +15,8 @@
 	<p>${user_name}</p>
 </div>
 	<p>${sb.text}</p>
-	<p>${sb.date}</p>
-	<p>${sb.th_tag}</p>
+	<p>${sb.time}</p>
+	<p>${sb.tag}</p>
 
 
 	<form method='post' action="threadpageservlet">
