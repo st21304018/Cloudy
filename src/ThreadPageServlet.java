@@ -22,12 +22,15 @@ public class ThreadPageServlet extends HttpServlet {
 			throws ServletException, IOException {
 		SelectBean sb = new SelectBean();
 
+
 		String threadid = req.getParameter("e");
 
 		String sql = "select th_text,th_date,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
 
 		ThreadSelectSql tss = new ThreadSelectSql();
 		sb = tss.ThreadText(sql);
+
+
 
 		HttpSession session = req.getSession();
 		session.setAttribute("sb", sb);

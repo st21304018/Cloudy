@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-	<p>${user_name}</p>
+	<p>${sb.name}</p>
 </div>
 	<p>${sb.text}</p>
 	<p>${sb.time}</p>
