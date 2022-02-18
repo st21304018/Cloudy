@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import bean.SelectBean;
+import logic.ThreadNamelogic;
 
 public class ThreadSelectSql {
 	SelectBean sb = new SelectBean();
@@ -28,9 +29,9 @@ public class ThreadSelectSql {
 			rs.next();
 			sb.setText(rs.getString("th_text"));
 			sb.setTime(rs.getString("th_date"));
-			sb.setUserid(rs.getInt("user_id"));
+			sb.setUserid(rs.getString("user_id"));
 			sb.setTag(rs.getString("th_tag"));
-
+			sb.setName(new ThreadNamelogic().nameLogic(sb));
 
 
 			cn.close();
