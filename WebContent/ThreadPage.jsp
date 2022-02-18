@@ -17,10 +17,11 @@
 	<p>${sb.text}</p>
 	<p>${sb.time}</p>
 	<p>${sb.tag}</p>
+	<p>${sb.userid}</p>
 
 
 	<form method='post' action="threadpageservlet">
-		<div>
+	<div>
 			<input type="text" name="text"> <input type="text" name="tag">
 		</div>
 
@@ -38,6 +39,7 @@
 	<p><c:out value="${map.value.time}"/></p>
 	<p><c:out value="${map.value.tag}"/></p>
 	<p><c:out value="${map.value.name}"/></p>
+	<p><c:out value="${map.value.reply_id}"/></p>
 
 
 	</c:forEach>
