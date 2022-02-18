@@ -98,10 +98,11 @@ body {
 	top: 17%;
 	padding-left: 5px;
 	padding-right: 5px;
-	height: 35px;
+	height: 36px;
+	width: 68px;
 	display: inline;
 	position: absolute;
-	border-radius: 12px;
+	border-radius: 10px;
 }
 
 .top-img{
