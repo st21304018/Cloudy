@@ -121,7 +121,6 @@
 			</article>
 			<aside class="right-aside"></aside>
 		</div>
-	</div>
 </body>
 
 

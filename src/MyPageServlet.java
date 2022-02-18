@@ -30,6 +30,8 @@ public class MyPageServlet extends HttpServlet {
 
 		// セッションスコープにコメントリストを保存
 		session.setAttribute("map", map);
+		String userName = ub.getName();
+		request.setAttribute("name", userName);
 
 		RequestDispatcher rd = request.getRequestDispatcher("MyPage");
 		rd.forward(request, response);
