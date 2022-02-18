@@ -86,21 +86,28 @@
 			<!-- ---/left-side--- -->
 			<article class="main-area">
 				<c:forEach var="map" items="${map}">
-					<a href="threadpageservlet?e=${map.value.id}">
-						<p><br>
-						<c:out value="${map.value.user_id}"/>
-						</p>
-						<p><br>
+					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
+					<div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+						<p class="userName">
 						<c:out value="${map.value.user_name}"/>
 						</p>
-						<p><br>
+						<p class="userId">
+						@<c:out value="${map.value.user_id}"/>
+						</p>
+					</div>
+					</div>
+					<p class="time">
+						<c:out value="${map.value.time}"/>
+					</p>
+					</div>
+						<p class="comment">
 						<c:out value="${map.value.comment}"/>
 						</p>
-						<p><br>
+						<p class="tag">
 						<c:out value="${map.value.tag}"/>
-						</p>
-						<p><br>
-						<c:out value="${map.value.time}"/>
 						</p>
 					</a>
 					<div class="likes-area">
@@ -113,9 +120,10 @@
 								</script>
 							</c:if>
 							<a href="like?e=${map.value.id}" class="input-submit"></a>
+							<p class="like_count">${map.value.likes}</p>
 						</div>
-						<p class="like_count">${map.value.likes}</p>
-					</div>
+						</div>
+						<hr>
 					<!---- /like-area ---->
 				</c:forEach>
 			</article>
