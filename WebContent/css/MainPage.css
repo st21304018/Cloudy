@@ -25,3 +25,52 @@
 	outline: none;
 }
 
+hr {
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: gray;
+	left: 50%;
+	right: 50%;
+}
+
+.userName {
+	margin: 0;
+}
+
+.userId {
+	margin: 0;
+	color: #606060;
+}
+
+.profile-area-2{
+	display: flex;
+	bottom: 5%;
+	padding: 5px;
+	padding-right: 50px;
+}
+.profile-area-2:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50px;
+}
+
+.side-time {
+	display: flex;
+	font-size: 50%;
+}
+
+.comment{
+	margin-left: 10px;
+}
+
+.time{
+	position:absolute;
+	color: #606060;
+	left: 67%;
+}
+
+.main-article {
+	text-decoration: none;
+	color : #000;
+}
+
+

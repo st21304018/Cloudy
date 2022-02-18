@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title> アカウント作成 - Cloudyアカウント</title>
+		<title> Cloudy - アカウント作成</title>
 		<link rel="stylesheet" href="css/create.css">
 		<script>
 			function on_offPass(){
@@ -26,7 +26,9 @@
 	</head>
 	<body>
 		<div class="input_area">
-			<div><img src="images/cloudylogo.jpeg" alt="クラウディのロゴ"></div>
+			<div>
+			<img class="cloudy-logo" src="images/cloudylogo.jpg" alt="クラウディのロゴ">
+			</div>
 			<div><h1 class="createTitle">アカウント作成</h1></div>
 			<form method='post' action="createservlet" class="form">
 				<div class="nameWrapper">

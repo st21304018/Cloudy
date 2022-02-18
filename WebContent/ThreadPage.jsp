@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Cloudy - リプライ</title>
 <script type="text/javascript">
 	function actionToggle(threadID) {
 		var id = threadID + 'like';

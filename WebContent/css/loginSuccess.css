@@ -25,6 +25,12 @@
 	outline: none;
 }
 
+.cloudy-logo {
+	width: 85px;
+	height: 45px;
+	border-radius: 10px;
+}
+
 /*固有部分*/
 
 .loginTitle{
