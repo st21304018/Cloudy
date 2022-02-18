@@ -30,6 +30,7 @@
 	}
 </script>
 <link rel="stylesheet" href="css/reaction.css">
+<link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/MainPage.css">
 <title>掲示板</title>
 </head>
@@ -47,9 +48,9 @@
 							<textarea name="comment" class="input_text_area"
 							placeholder="コメントを入力"></textarea>
 							<textarea name="tag" class="input_tag_area"
-							placeholder="tagを入力"></textarea>
-						<div>
-								<input class="submit-button" type="submit" value="tweet">
+							placeholder="タグを入力"></textarea>
+							<div>
+								<input class="submit-button" type="submit" value="comment">
 							</div>
 						</div>
 					</form>
@@ -116,6 +117,7 @@
 					<!---- /like-area ---->
 				</c:forEach>
 			</article>
+			<!----right-aside---->
 			<aside class="right-aside">
 				<div class="right-wrapper">
 					<div class="serch-box">
@@ -126,7 +128,9 @@
 					</div>
 				</div>
 			</aside>
+			<!----/right-aside---->
 		</div>
+	</div>
 </body>
 
 
