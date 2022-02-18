@@ -10,6 +10,7 @@ public class SelectBean implements Serializable {
 	private String name;
 	private String user_id;
 	private int th_id;
+	private int reply_id;
 
 
 	public void setText(String text){
@@ -50,6 +51,12 @@ public class SelectBean implements Serializable {
 	}
 	public void setTh_id(int th_id) {
 		this.th_id = th_id;
+	}
+	public int getReply_id() {
+		return reply_id;
+	}
+	public void setReply_id(int reply_id) {
+		this.reply_id = reply_id;
 	}
 
 }
