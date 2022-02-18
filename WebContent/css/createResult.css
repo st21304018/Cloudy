@@ -3,3 +3,9 @@
 .main{
 	text-align: center;
 }
+
+.cloudy-logo {
+	width: 85px;
+	height: 45px;
+	border-radius: 10px;
+}

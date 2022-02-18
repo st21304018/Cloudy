@@ -30,8 +30,9 @@
 	}
 </script>
 <link rel="stylesheet" href="css/reaction.css">
+<link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/MainPage.css">
-<title>掲示板</title>
+<title>Cloudy - メインページ</title>
 </head>
 
 <body>
@@ -45,13 +46,11 @@
 						onSubmit="return check()">
 						<div class="input_area">
 							<textarea name="comment" class="input_text_area"
-								placeholder="コメントを入力"></textarea>
-
-								<textarea name="tag" class="input_text_area"
-								placeholder="tagを入力"></textarea>
-
+							placeholder="コメントを入力"></textarea>
+							<textarea name="tag" class="input_tag_area"
+							placeholder="タグを入力"></textarea>
 							<div>
-								<input type="submit" value="tweet">
+								<input class="submit-button" type="submit" value="comment">
 							</div>
 						</div>
 					</form>
@@ -64,13 +63,15 @@
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="skip-top">Top</p>
+						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
-					<a class="skip-link" href="mypage"><div class="mypage-button skip-button">
-						<p class="skip-mypage">MyPage</p>
+					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
-					<input type="button" class="putButton" onclick="showForm()"
-						value="Comment">
+					<a class="skip-link" href="logout"><div class="logout-button skip-button">
+						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
+					</div></a>
+					<input type="button" class="putButton" onclick="showForm()" value="Comment">
 					<div class="profile-area">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
@@ -82,19 +83,31 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
+			<div class="title-area"><p class="title-text">MainPage</p></div>
+				<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
-					<a href="threadpageservlet?e=${map.value.id}">
-						<p><br>
+					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
+					<div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+						<p class="userName">
 						<c:out value="${map.value.user_name}"/>
 						</p>
-						<p><br>
+						<p class="userId">
+						@<c:out value="${map.value.user_id}"/>
+						</p>
+					</div>
+					</div>
+					<p class="time">
+						<c:out value="${map.value.time}"/>
+					</p>
+					</div>
+						<p class="comment">
 						<c:out value="${map.value.comment}"/>
 						</p>
-						<p><br>
+						<p class="tag">
 						<c:out value="${map.value.tag}"/>
-						</p>
-						<p><br>
-						<c:out value="${map.value.time}"/>
 						</p>
 					</a>
 					<div class="likes-area">
@@ -107,13 +120,26 @@
 								</script>
 							</c:if>
 							<a href="like?e=${map.value.id}" class="input-submit"></a>
+							<p class="like_count">${map.value.likes}</p>
 						</div>
-						<p class="like_count">${map.value.likes}</p>
-					</div>
+						</div>
+						<hr>
 					<!---- /like-area ---->
 				</c:forEach>
+				</div>
 			</article>
-			<aside class="right-aside"></aside>
+			<!----right-aside---->
+			<aside class="right-aside">
+				<div class="right-wrapper">
+					<div class="serch-box">
+						<img src="images/search.png" class="search-img">
+						<form method="GET" action="search">
+							<div><input class="search-input" type="text" name="tag" placeholder="タグを検索"></div>
+						</form>
+					</div>
+				</div>
+			</aside>
+			<!----/right-aside---->
 		</div>
 	</div>
 </body>

@@ -15,7 +15,7 @@ import logic.UsernameLogic;
 
 public class FindCommentSQL {
 
-    public Map<Integer, Board> findcomment(UserBean ubean) {
+    public Map<Integer, Board> findcomment(UserBean ubean, String sql) {
 
         // id,name,commentを格納するリスト
         Map<Integer, Board> list = new LinkedHashMap<>();
@@ -34,8 +34,6 @@ public class FindCommentSQL {
             try {
                 Statement st = con.createStatement();
 
-                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi')AS time,th_tag from cloudy_thread order by th_id desc";
-
 
                 try {
                     // sqlを送信
@@ -53,7 +51,6 @@ public class FindCommentSQL {
                 		bo.setTag(rs.getString("th_tag"));
                 		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
                 		bo.setUser_name(new UsernameLogic().nameLogic(bo));
-
 
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
                         list.put(bo.getId(), bo);
