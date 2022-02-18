@@ -25,15 +25,10 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String threadid = req.getParameter("e");
 
-
-		String sql = "select th_text,TO_CHAR(th_date, 'hh24:mi') AS time ,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
-
-		ThreadSelectSql tss = new ThreadSelectSql();
-		sb = tss.ThreadText(sql);
 		HttpSession session = req.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
-		String sql = "select th_text,th_date,th_tag,user_id, th_likes from cloudy_thread where th_id = '" + threadid + "'";
+		String sql = "select th_text,TO_CHAR(th_date, 'hh24:mi') AS time ,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
 
 		ThreadSelectSql tss = new ThreadSelectSql();
 		sb = tss.ThreadText(sql, ub);
