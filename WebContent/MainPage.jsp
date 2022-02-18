@@ -84,6 +84,7 @@
 			<!-- ---/left-side--- -->
 			<article class="main-area">
 			<div class="title-area"><p class="title-text">MainPage</p></div>
+				<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
 					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
 					<div class="side-time">
@@ -125,6 +126,7 @@
 						<hr>
 					<!---- /like-area ---->
 				</c:forEach>
+				</div>
 			</article>
 			<!----right-aside---->
 			<aside class="right-aside">
