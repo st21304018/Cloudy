@@ -8,8 +8,6 @@ public class SelectBean implements Serializable {
 	private String tag;
 	private String time;
 	private String name;
-	private String check;
-	private int likes;
 	private int user_id;
 	private int th_id;
 	private int reply_id;
@@ -59,18 +57,6 @@ public class SelectBean implements Serializable {
 	}
 	public void setReply_id(int reply_id) {
 		this.reply_id = reply_id;
-	}
-	public String getCheck() {
-		return check;
-	}
-	public void setCheck(String check) {
-		this.check = check;
-	}
-	public int getLikes() {
-		return likes;
-	}
-	public void setLikes(int likes) {
-		this.likes = likes;
 	}
 
 }

@@ -63,8 +63,6 @@
 			<aside class="left-aside">
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
-					<a class="skip-link" href="MainPage"><div class="logout-button skip-button">
-						<img class="MainPage-img skip-img" src="images/cloudylogo.jpg"></div></a>
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
 						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
@@ -121,7 +119,7 @@
 									actionToggle(threadID);
 								</script>
 							</c:if>
-							<a href="likerep?e=${map.value.reply_id}" class="input-submit"></a>
+							<a href="like?e=${map.value.id}" class="input-submit"></a>
 						</div>
 						<p class="like_count">${map.value.likes}</p>
 					</div>
