@@ -83,6 +83,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
+			<div class="title-area"><p class="title-text">MainPage</p></div>
 				<c:forEach var="map" items="${map}">
 					<a href="threadpageservlet?e=${map.value.id}">
 						<p><br>

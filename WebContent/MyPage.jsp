@@ -68,6 +68,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
+			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p>　　MyPage</p></div>
 			<c:forEach var="map" items="${map}">
 				<p>
 					<br>
