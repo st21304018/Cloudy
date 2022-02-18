@@ -11,6 +11,7 @@ import java.util.Map;
 import bean.Board;
 import bean.UserBean;
 import logic.LikeCheckLogic;
+import logic.UsernameLogic;
 
 public class FindCommentSQL {
 
@@ -32,7 +33,9 @@ public class FindCommentSQL {
 
             try {
                 Statement st = con.createStatement();
-                String sql = "select th_id, th_text, th_likes, user_id from cloudy_thread order by th_id desc";
+
+                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi')AS time,th_tag from cloudy_thread order by th_id desc";
+
 
                 try {
                     // sqlを送信
@@ -46,7 +49,10 @@ public class FindCommentSQL {
                         bo.setComment(rs.getString("th_text"));
                 		bo.setLikes(rs.getInt("th_likes"));
                 		bo.setUser_id(rs.getString("user_id"));
+                		bo.setTime(rs.getString("time"));
+                		bo.setTag(rs.getString("th_tag"));
                 		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
+                		bo.setUser_name(new UsernameLogic().nameLogic(bo));
 
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
                         list.put(bo.getId(), bo);

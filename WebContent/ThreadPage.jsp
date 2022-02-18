@@ -11,8 +11,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+	<p>${user_name}</p>
+</div>
+	<p>${sb.text}</p>
+	<p>${sb.time}</p>
+	<p>${sb.tag}</p>
 
-	<p>${threadtext}</p>
 
 	<form method='post' action="threadpageservlet">
 		<div>
@@ -27,9 +32,13 @@
 
 	</form>
 
-	<c:forEach var="list" items="${list}">
+	<c:forEach var="map" items="${map}">
 
-	<p><c:out value="${list.text}"/></p>
+	<p><c:out value="${map.value.text}"/></p>
+	<p><c:out value="${map.value.time}"/></p>
+	<p><c:out value="${map.value.tag}"/></p>
+	<p><c:out value="${map.value.name}"/></p>
+
 
 	</c:forEach>
 <body>

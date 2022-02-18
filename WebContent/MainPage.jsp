@@ -46,8 +46,12 @@
 						<div class="input_area">
 							<textarea name="comment" class="input_text_area"
 								placeholder="コメントを入力"></textarea>
+
+								<textarea name="tag" class="input_text_area"
+								placeholder="tagを入力"></textarea>
+
 							<div>
-								<input type="submit" value="TWEET">
+								<input type="submit" value="tweet">
 							</div>
 						</div>
 					</form>
@@ -60,10 +64,13 @@
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="skip-top">Top</p>
+						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
-						<p class="skip-mypage">MyPage</p>
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
+					</div></a>
+					<a class="skip-link" href="logout"><div class="logout-button skip-button">
+						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
 					</div></a>
 					<input type="button" class="putButton" onclick="showForm()"
 						value="Comment">
@@ -77,13 +84,23 @@
 				</div>
 			</aside>
 			<!-- ---/left-side--- -->
-
 			<article class="main-area">
 				<c:forEach var="map" items="${map}">
 					<a href="threadpageservlet?e=${map.value.id}">
-						<p>
-							<br>
-							<c:out value="${map.value.comment}" />
+						<p><br>
+						<c:out value="${map.value.user_id}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.user_name}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.comment}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.tag}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.time}"/>
 						</p>
 					</a>
 					<div class="likes-area">
