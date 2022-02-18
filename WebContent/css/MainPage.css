@@ -68,6 +68,10 @@ hr {
 	left: 67%;
 }
 
+.tag {
+	margin-left: 10px;
+}
+
 .main-article {
 	text-decoration: none;
 	color : #000;
