@@ -45,13 +45,11 @@
 						onSubmit="return check()">
 						<div class="input_area">
 							<textarea name="comment" class="input_text_area"
-								placeholder="コメントを入力"></textarea>
-
-								<textarea name="tag" class="input_text_area"
-								placeholder="tagを入力"></textarea>
-
-							<div>
-								<input type="submit" value="tweet">
+							placeholder="コメントを入力"></textarea>
+							<textarea name="tag" class="input_tag_area"
+							placeholder="tagを入力"></textarea>
+						<div>
+								<input class="submit-button" type="submit" value="tweet">
 							</div>
 						</div>
 					</form>
@@ -72,8 +70,7 @@
 					<a class="skip-link" href="logout"><div class="logout-button skip-button">
 						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
 					</div></a>
-					<input type="button" class="putButton" onclick="showForm()"
-						value="Comment">
+					<input type="button" class="putButton" onclick="showForm()" value="Comment">
 					<div class="profile-area">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
@@ -119,7 +116,16 @@
 					<!---- /like-area ---->
 				</c:forEach>
 			</article>
-			<aside class="right-aside"></aside>
+			<aside class="right-aside">
+				<div class="right-wrapper">
+					<div class="serch-box">
+						<img src="images/search.png" class="search-img">
+						<form method="GET" action="search">
+							<div><input class="search-input" type="text" name="tag" placeholder="タグを検索"></div>
+						</form>
+					</div>
+				</div>
+			</aside>
 		</div>
 </body>
 

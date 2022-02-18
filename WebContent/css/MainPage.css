@@ -143,7 +143,36 @@ body {
 /*--------right-aside-----------*/
 .right-aside{
 	width: 30%;
+	margin-left: 70%;
 	position: fixed;
+}
+.serch-box{
+	margin-left: 30px;
+	margin-top: 30px;
+	position: relative;
+}
+.search-img{
+	top: 28%;
+	left: 4%;
+	height: 17px;
+	position: absolute;
+}
+.search-input{
+	border: none;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-radius: 40px;
+	background-color: rgba(0, 0, 0, 0.07);
+}
+.search-input:focus{
+	background-color: #fff;
+	border: 1px solid #00bfff;
+	padding-left: 49px;
+	padding-right: 49px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
 
@@ -170,6 +199,22 @@ body {
 	margin-bottom: 6px;
 	margin-left: 6px;
 	margin-right: 6px;
+}
+.input_area{
+	position: relative;
+}
+.input_tag_area{
+	resize: none;
+	border: none;
+	outline: none;
+	z-index: 100000;
+	font-size: 20px;
+	bottom: 24%;
+	right: 6%;
+	position: absolute;
+}
+.input_tag_area::placeholder{
+	font-size: 20px;
 }
 .input_box_close:hover{
 	background-color: rgba(0, 0, 0, 0.2);
@@ -215,5 +260,22 @@ body {
 }
 .form_area{
 	text-align: center;
+}
+.submit-button{
+	border: 2px solid #00BFFF;
+	background: #00BFFF;
+	color: #fff;
+	font-weight: bolder;
+	border-radius: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.submit-button:hover{
+	background: #fff;
+	border-color: #00BFFF;
+	color: #00BFFF;
+	transition: 0.3s;
 }
 /*-----------/tweet-box--------------*/

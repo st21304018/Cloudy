@@ -139,4 +139,13 @@
 		<servlet-name>mypage</servlet-name>
 		<url-pattern>/mypage</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>search</servlet-name>
+		<servlet-class>SearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>search</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
 </web-app>
