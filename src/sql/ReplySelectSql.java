@@ -9,10 +9,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import bean.SelectBean;
+import bean.UserBean;
+import logic.LikeCheckLogic;
 
 public class ReplySelectSql {
 
-	public Map<Integer,SelectBean> replySelect(String sql) {
+	public Map<Integer,SelectBean> replySelect(String sql, UserBean ubean) {
 
 		Map<Integer,SelectBean> map = new LinkedHashMap<Integer,SelectBean>();
 
@@ -40,8 +42,8 @@ public class ReplySelectSql {
 				sb.setTag(rs.getString("reply_tag"));
 				sb.setTh_id(rs.getInt("th_id"));
 				sb.setReply_id(rs.getInt("reply_id"));
-
-
+				sb.setLikes(rs.getInt("reply_likes"));
+				sb.setCheck(new LikeCheckLogic().likeRepLogic(sb, ubean));
 
 				map.put(sb.getReply_id(),sb);
 			}
