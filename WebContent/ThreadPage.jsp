@@ -38,13 +38,6 @@
 </head>
 <body>
 <div>
-	<p>${sb.name}</p>
-</div>
-	<p>${sb.text}</p>
-	<p>${sb.time}</p>
-	<p>${sb.tag}</p>
-	<p>${sb.userid}</p>
-
 	<div id="thread" class="thread_page">
 	<!---- input-box ---->
 		<div id="box" class="box_area" style="display: none">
@@ -95,7 +88,7 @@
 			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
 				<div class="tweet-area">
 				<div>
-					<p>${user_name}</p>
+					<p>${sb.name}</p>
 				</div>
 				<p>${sb.text}</p>
 				<p>${sb.time}</p>
