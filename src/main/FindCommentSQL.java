@@ -54,7 +54,7 @@ public class FindCommentSQL {
                 		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
                 		bo.setUser_name(new UsernameLogic().nameLogic(bo));
 
-
+                		System.out.println(bo.getTag());
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
                         list.put(bo.getId(), bo);
                     }
