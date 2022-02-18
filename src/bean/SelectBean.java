@@ -8,7 +8,7 @@ public class SelectBean implements Serializable {
 	private String tag;
 	private String time;
 	private String name;
-	private int user_id;
+	private String user_id;
 	private int th_id;
 	private int reply_id;
 
@@ -34,10 +34,10 @@ public class SelectBean implements Serializable {
 		this.time = time;
 	}
 
-	public int getUserid() {
+	public String getUserid() {
 		return user_id;
 	}
-	public void setUserid(int user_id) {
+	public void setUserid(String user_id) {
 		this.user_id = user_id;
 	}
 	public String getName() {

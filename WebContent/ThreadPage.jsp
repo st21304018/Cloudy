@@ -37,6 +37,14 @@
 <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div>
+	<p>${sb.name}</p>
+</div>
+	<p>${sb.text}</p>
+	<p>${sb.time}</p>
+	<p>${sb.tag}</p>
+	<p>${sb.userid}</p>
+
 	<div id="thread" class="thread_page">
 	<!---- input-box ---->
 		<div id="box" class="box_area" style="display: none">

@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import bean.SelectBean;
+import logic.ThreadNamelogic;
 
 public class ReplySelectSql {
 
@@ -40,11 +41,14 @@ public class ReplySelectSql {
 				sb.setTag(rs.getString("reply_tag"));
 				sb.setTh_id(rs.getInt("th_id"));
 				sb.setReply_id(rs.getInt("reply_id"));
-
+				sb.setUserid(rs.getString("user_id"));
+				sb.setName(new ThreadNamelogic().nameLogic(sb));
 
 
 				map.put(sb.getReply_id(),sb);
 			}
+
+
 
 			rs.close();
 			st.close();
