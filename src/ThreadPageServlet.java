@@ -30,7 +30,7 @@ public class ThreadPageServlet extends HttpServlet {
 		sb = tss.ThreadText(sql);
 
 		HttpSession session = req.getSession();
-		session.setAttribute("bean", sb);
+		session.setAttribute("sb", sb);
 
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
@@ -44,7 +44,7 @@ public class ThreadPageServlet extends HttpServlet {
 		session.setAttribute("th_id", threadid);
 
 
-		session.setAttribute("map", map);
+		req.setAttribute("map", map);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("threadpage");
 
@@ -69,7 +69,7 @@ public class ThreadPageServlet extends HttpServlet {
 		bean.setTag(tag);
 
 		String sql = " insert into cloudy_reply(reply_id,reply_text,reply_tag,th_id,user_id) values(reply_seq.nextval,?,?,"
-				+ threadid + ",'"+ub.getUser_id()+"')";
+				+ threadid + ",'"+ub.getUserId()+"')";
 
 		ThreadInsertSql in = new ThreadInsertSql();
 		in.setText(bean, sql);
