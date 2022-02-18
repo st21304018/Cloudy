@@ -83,6 +83,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
+			<div class="title-area"><p class="title-text">MainPage</p></div>
 				<c:forEach var="map" items="${map}">
 					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
 					<div class="side-time">

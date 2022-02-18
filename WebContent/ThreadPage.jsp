@@ -84,6 +84,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
+			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
 				<div>
 					<p>${user_name}</p>
 				</div>
