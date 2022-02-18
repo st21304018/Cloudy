@@ -34,7 +34,7 @@ public class FindCommentSQL {
             try {
                 Statement st = con.createStatement();
 
-                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi') as time from cloudy_thread order by th_id desc";
+                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi')AS time,th_tag from cloudy_thread order by th_id desc";
 
 
                 try {
@@ -50,6 +50,7 @@ public class FindCommentSQL {
                 		bo.setLikes(rs.getInt("th_likes"));
                 		bo.setUser_id(rs.getString("user_id"));
                 		bo.setTime(rs.getString("time"));
+                		bo.setTag(rs.getString("th_tag"));
                 		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
                 		bo.setUser_name(new UsernameLogic().nameLogic(bo));
 

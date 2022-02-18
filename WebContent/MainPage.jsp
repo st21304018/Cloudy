@@ -46,8 +46,12 @@
 						<div class="input_area">
 							<textarea name="comment" class="input_text_area"
 								placeholder="コメントを入力"></textarea>
+
+								<textarea name="tag" class="input_text_area"
+								placeholder="tagを入力"></textarea>
+
 							<div>
-								<input type="submit" value="TWEET">
+								<input type="submit" value="tweet">
 							</div>
 						</div>
 					</form>
@@ -88,6 +92,9 @@
 						</p>
 						<p><br>
 						<c:out value="${map.value.comment}"/>
+						</p>
+						<p><br>
+						<c:out value="${map.value.tag}"/>
 						</p>
 						<p><br>
 						<c:out value="${map.value.time}"/>
