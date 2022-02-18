@@ -33,7 +33,7 @@ public class MyPageServlet extends HttpServlet {
 		String userName = ub.getName();
 		request.setAttribute("name", userName);
 
-		RequestDispatcher rd = request.getRequestDispatcher("MyPage");
+		RequestDispatcher rd = request.getRequestDispatcher("mypage");
 		rd.forward(request, response);
 	}
 }
