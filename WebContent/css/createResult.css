@@ -1,5 +1,52 @@
 @charset "UTF-8";
 
+/*共通部分*/
+
+.html
+{
+	font-size: 100%;
+}
+.body
+{
+	font-family: "Yu Gothic Medium", "游ゴシック Medium",
+	"YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "sans-serif";
+
+	line-height: 1.7;
+	color: #432;
+}
+.a
+{
+	text-decoration: none;
+}
+.img
+{
+	max-width: 100%;
+}
+:focus {
+    outline: none;
+}
+
 .main{
 	text-align: center;
+}
+
+.submit_button{
+	margin-top: 35px;
+	border: 2px solid #00bfff;
+	background: #00bfff;
+	color: #fff;
+	font-weight: bolder;
+	border-radius: 10px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 80px;
+	padding-right: 80px;
+	font-size: 1.06em;
+}
+
+.submit_button:hover{
+	background: #fff;
+	border-color: #00bfff;
+	color: #00bfff;
+	transition: 0.3s;
 }
