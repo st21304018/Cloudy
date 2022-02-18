@@ -71,24 +71,33 @@
 			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　MyPage</p></div>
 			<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
-					<p>
-						<br>
-						<c:out value="${map.value.comment}" />
-					</p>
-					<div class="likes-area">
-						<div id="${map.value.id}like" class="input-wrapper offHeart">
-							<c:if test="${not empty map.value.check}">
-								<script>
-									var threadID = ${map.value.id	};
-									actionToggle(threadID);
-								</script>
-							</c:if>
-							<a href="like?e=${map.value.id}" class="input-submit"></a>
-						</div>
-						<p class="like_count">${map.value.likes}</p>
+					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
+					<div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+						<p class="userName">
+						<c:out value="${account.name}"/>
+						</p>
+						<p class="userId">
+						@<c:out value="${map.value.user_id}"/>
+						</p>
 					</div>
+					</div>
+					<p class="time">
+						<c:out value="${map.value.time}"/>
+					</p>
+					</div>
+						<p class="comment">
+						<c:out value="${map.value.comment}"/>
+						</p>
+						<p class="tag">
+						<c:out value="${map.value.tag}"/>
+						</p>
+					</a>
+					<hr>
 				</c:forEach>
-			</div>
+				</div>
 			</article>
 			<!----right-aside---->
 			<aside class="right-aside">

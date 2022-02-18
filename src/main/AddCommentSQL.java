@@ -17,6 +17,12 @@ public class AddCommentSQL {
             bo.setComment( "コメント無し");
         }
 
+        if(bo.getTag().isEmpty()) {
+        }else {
+        	String tag = bo.getTag();
+        	bo.setTag("#" + tag);
+        }
+
 
 
         Connection con = null;
