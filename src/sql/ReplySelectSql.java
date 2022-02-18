@@ -39,7 +39,7 @@ public class ReplySelectSql {
 
 				SelectBean sb = new SelectBean();
 				sb.setText(rs.getString("reply_text"));
-				sb.setTime(rs.getString("reply_date"));
+				sb.setTime(rs.getString("time"));
 				sb.setTag(rs.getString("reply_tag"));
 				sb.setTh_id(rs.getInt("th_id"));
 				sb.setReply_id(rs.getInt("reply_id"));
