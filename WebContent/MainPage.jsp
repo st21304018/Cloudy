@@ -85,6 +85,9 @@
 				<c:forEach var="map" items="${map}">
 					<a href="threadpageservlet?e=${map.value.id}">
 						<p><br>
+						<c:out value="${map.value.user_id}"/>
+						</p>
+						<p><br>
 						<c:out value="${map.value.user_name}"/>
 						</p>
 						<p><br>
