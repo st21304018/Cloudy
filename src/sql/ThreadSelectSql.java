@@ -30,7 +30,7 @@ public class ThreadSelectSql {
 
 			rs.next();
 			sb.setText(rs.getString("th_text"));
-			sb.setTime(rs.getString("th_date"));
+			sb.setTime(rs.getString("time"));
 			sb.setUserid(rs.getString("user_id"));
 			sb.setTag(rs.getString("th_tag"));
 			sb.setName(new ThreadNamelogic().nameLogic(sb));

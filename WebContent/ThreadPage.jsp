@@ -37,7 +37,6 @@
 <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-
 	<div id="thread" class="thread_page">
 	<!---- input-box ---->
 		<div id="box" class="box_area" style="display: none">

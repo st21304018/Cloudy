@@ -25,6 +25,11 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String threadid = req.getParameter("e");
 
+
+		String sql = "select th_text,TO_CHAR(th_date, 'hh24:mi') AS time ,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
+
+		ThreadSelectSql tss = new ThreadSelectSql();
+		sb = tss.ThreadText(sql);
 		HttpSession session = req.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
@@ -38,7 +43,8 @@ public class ThreadPageServlet extends HttpServlet {
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,reply_date,user_id,reply_tag,th_id,reply_id, reply_likes "
+		String replysql = "Select reply_text,TO_CHAR(reply_date, 'hh24:mi')AS time,user_id,reply_tag,th_id,reply_id, reply_likes "
+
 				+ "from cloudy_reply where th_id = '" + threadid + "'";
 
 		map = rs.replySelect(replysql, ub);
@@ -80,8 +86,9 @@ public class ThreadPageServlet extends HttpServlet {
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,reply_date,user_id,reply_tag,th_id,reply_id, reply_likes "
-				+ "from cloudy_reply where th_id = '" + threadid + "'";
+		String replysql = "Select reply_text,TO_CHAR(reply_date, 'hh24:mi')AS time,user_id,reply_tag, th_id ,reply_id, reply_likes from cloudy_reply where th_id = '"
+				+ threadid + "'";
+
 
 		map = rs.replySelect(replysql, ub);
 
