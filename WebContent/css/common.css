@@ -94,9 +94,20 @@ body {
 	display: inline;
 	position: absolute;
 }
+.cloudy-logo {
+	top: 17%;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 35px;
+	display: inline;
+	position: absolute;
+	border-radius: 12px;
+}
+
 .top-img{
 	margin: 0;
 }
+
 .putButton{
 	outline: none;
 	border: 2px solid #00BFFF;

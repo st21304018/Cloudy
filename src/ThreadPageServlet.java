@@ -66,7 +66,10 @@ public class ThreadPageServlet extends HttpServlet {
 
 		String text = req.getParameter("text");
 		String tag = req.getParameter("tag");
-
+		if(tag.isEmpty()) {
+        }else {
+        	tag = "#" + tag;
+        }
 
 		textBean bean = new textBean();
 		bean.setText(text);

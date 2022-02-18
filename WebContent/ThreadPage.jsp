@@ -35,6 +35,7 @@
 </script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/Reply.css">
 </head>
 <body>
 	<div id="thread" class="thread_page">
@@ -64,7 +65,7 @@
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
 					<a class="skip-link" href="MainPage"><div class="skip-main">
-						<img class="MainPage-img skip-img" src="images/cloudylogo.jpg"></div></a>
+						<img class="cloudy-logo" src="images/cloudylogo.jpg"></div></a>
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
 						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
@@ -88,29 +89,55 @@
 			<article class="main-area">
 			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
 				<div class="tweet-area">
-				<div>
-					<p>${sb.name}</p>
-				</div>
-					<p>${sb.text}</p>
-					<p>${sb.time}</p>
-					<p>${sb.tag}</p>
-					<p>${sb.userid}</p>
-
+				<div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+					<p class="userName">${sb.name}</p>
+					<p class="userId">@<c:out value="${sb.userid}" /></p></div></div>
+					<p class="time">${sb.time}</p></div>
+					<p class="comment">${sb.text}</p>
+					<p class="tag">${sb.tag}</p>
+					<hr>
+<!-- <div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+						<p class="userName">
+						<c:out value="${map.value.user_name}"/>
+						</p>
+						<p class="userId">
+						@<c:out value="${map.value.user_id}"/>
+						</p>
+					</div>
+					</div>
+					<p class="time">
+						<c:out value="${map.value.time}"/>
+					</p>
+					</div> -->
 				<c:forEach var="map" items="${map}">
-					<p>
-						<c:out value="${map.value.text}" />
-					</p>
-					<p>
-						<c:out value="${map.value.time}" />
-					</p>
-					<p>
-						<c:out value="${map.value.tag}" />
-					</p>
-					<p>
+				<div class="reply">
+				<div class="side-time">
+					<div class="profile-area-2">
+					<img class="profile-img" src="images/profile_icon.png">
+					<div class="user-info">
+					<p class="userName">
 						<c:out value="${map.value.name}" />
 					</p>
-					<p>
-						<c:out value="${map.value.reply_id}" />
+					<p class="userId">
+						@<c:out value="${map.value.userid}" />
+					</p>
+					</div>
+					</div>
+					<p class="time">
+						<c:out value="${map.value.time}" />
+					</p>
+					</div>
+					<p class="comment">
+						<c:out value="${map.value.text}" />
+					</p>
+					<p class="tag">
+						<c:out value="${map.value.tag}" />
 					</p>
 					<div class="likes-area">
 						<!---- like-area ---->
@@ -125,6 +152,8 @@
 						</div>
 						<p class="like_count">${map.value.likes}</p>
 					</div>
+					</div>
+					<hr>
 					<!---- /like-area ---->
 				</c:forEach>
 				</div>
