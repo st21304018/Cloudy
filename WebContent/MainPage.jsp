@@ -31,7 +31,7 @@
 </script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/MainPage.css">
-<title>掲示板</title>
+<title>Cloudy - メインページ</title>
 </head>
 
 <body>

@@ -10,7 +10,7 @@
 <body>
 	<div class="input_area">
 		<div>
-			<img src="images/cloudylogo.jpeg" alt="クラウディのロゴ">
+			<img class="cloudy-logo" src="images/cloudylogo.jpg" alt="クラウディのロゴ">
 		</div>
 		<h1 class="loginTitle">Cloudyにログイン</h1>
 		<div class="text">
