@@ -16,24 +16,47 @@
 </script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/MyPage.css">
+<link rel="stylesheet" href="css/common.css">
 <title>Cloudy - マイページ</title>
 </head>
 <body>
 
-<div id="top" class="main-page">
+<div id="thread" class="thread_page">
+		<!---- input-box ---->
+		<div id="box" class="box_area" style="display: none">
+			<div class="input_box">
+				<div class="input_box_close" onclick="hideForm()">×</div>
+				<div class="form_area">
+					<form action="MainPage" method="post" name="form1"
+						onSubmit="return check()">
+						<div class="input_area">
+							<textarea name="comment" class="input_text_area"
+							placeholder="コメントを入力"></textarea>
+							<textarea name="tag" class="input_tag_area"
+							placeholder="タグを入力"></textarea>
+							<div>
+								<input class="submit-button" type="submit" value="comment">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!---- /input-box ---->
+		<div id="top" class="main-page">
 			<aside class="left-aside">
 				<!-- ---left-side--- -->
-				<p>${name}さんのマイページ</p>
 				<div class="left-wrapper">
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="skip-top">Top</p>
-					</div></a>
-					<a class="skip-link" href="MainPage"><div class="mainpage-button skip-button">
-						<p class="skip-mainpage">MainPage</p>
+						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
-						<p class="skip-mypage">MyPage</p>
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
+					<a class="skip-link" href="logout"><div class="logout-button skip-button">
+						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
+					</div></a>
+					<input type="button" class="putButton" onclick="showForm()" value="Comment">
 					<div class="profile-area">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
@@ -41,33 +64,42 @@
 							<p class="profile-id">@${account.userId}</p>
 						</div>
 					</div>
-					</div>
-					</aside>
+				</div>
+			</aside>
 			<!-- ---/left-side--- -->
-
-<article class="main-area">
-	<c:forEach var="map" items="${map}">
-		<p>
-			<br>
-			<c:out value="${map.value.comment}" />
-		</p>
-		<div class="likes-area">
-			<div id="${map.value.id}like" class="input-wrapper offHeart">
-				<c:if test="${not empty map.value.check}">
-					<script>
-						var threadID = ${map.value.id	};
-						actionToggle(threadID);
-					</script>
-				</c:if>
-				<a href="like?e=${map.value.id}" class="input-submit"></a>
-			</div>
-			<p class="like_count">${map.value.likes}</p>
+			<article class="main-area">
+			<c:forEach var="map" items="${map}">
+				<p>
+					<br>
+					<c:out value="${map.value.comment}" />
+				</p>
+				<div class="likes-area">
+					<div id="${map.value.id}like" class="input-wrapper offHeart">
+						<c:if test="${not empty map.value.check}">
+							<script>
+								var threadID = ${map.value.id	};
+								actionToggle(threadID);
+							</script>
+						</c:if>
+						<a href="like?e=${map.value.id}" class="input-submit"></a>
+					</div>
+					<p class="like_count">${map.value.likes}</p>
+				</div>
+			</c:forEach>
+			</article>
+			<!----right-aside---->
+			<aside class="right-aside">
+				<div class="right-wrapper">
+					<div class="serch-box">
+						<img src="images/search.png" class="search-img">
+						<form method="GET" action="search">
+							<div><input class="search-input" type="text" name="tag" placeholder="タグを検索"></div>
+						</form>
+					</div>
+				</div>
+			</aside>
+			<!----/right-aside---->
 		</div>
-	</c:forEach>
-	</article>
 	</div>
-
-<aside class="right-aside"></aside>
-
 </body>
 </html>

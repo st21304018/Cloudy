@@ -15,7 +15,7 @@ import logic.UsernameLogic;
 
 public class FindCommentSQL {
 
-    public Map<Integer, Board> findcomment(UserBean ubean) {
+    public Map<Integer, Board> findcomment(UserBean ubean, String sql) {
 
         // id,name,commentを格納するリスト
         Map<Integer, Board> list = new LinkedHashMap<>();
@@ -33,8 +33,6 @@ public class FindCommentSQL {
 
             try {
                 Statement st = con.createStatement();
-
-                String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi')AS time,th_tag from cloudy_thread order by th_id desc";
 
 
                 try {
