@@ -31,7 +31,7 @@ public class MyPageServlet extends HttpServlet {
 		// セッションスコープにコメントリストを保存
 		session.setAttribute("map", map);
 
-		RequestDispatcher rd = request.getRequestDispatcher("mypage");
+		RequestDispatcher rd = request.getRequestDispatcher("MyPage");
 		rd.forward(request, response);
 	}
 }
