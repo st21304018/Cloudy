@@ -61,7 +61,12 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 	position: relative;
-
+}
+.skip-main{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-bottom: 18px;
+	position: relative;
 }
 .skip-button:hover{
 	background-color: rgba(0, 0, 0, 0.1);
