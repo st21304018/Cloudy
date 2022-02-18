@@ -43,10 +43,10 @@
 			<div class="input_box">
 				<div class="input_box_close" onclick="hideForm()">×</div>
 				<div class="form_area">
-					<form action="MainPage" method="post" name="form1"
+					<form action="threadpageservlet" method="post" name="form1"
 						onSubmit="return check()">
 						<div class="input_area">
-							<textarea name="comment" class="input_text_area"
+							<textarea name="text" class="input_text_area"
 							placeholder="コメントを入力"></textarea>
 							<textarea name="tag" class="input_tag_area"
 							placeholder="タグを入力"></textarea>
@@ -85,6 +85,7 @@
 			<!-- ---/left-side--- -->
 			<article class="main-area">
 			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
+				<div class="tweet-area">
 				<div>
 					<p>${user_name}</p>
 				</div>
@@ -111,10 +112,10 @@
 					</p>
 					<div class="likes-area">
 						<!---- like-area ---->
-						<div id="${map.value.id}like" class="input-wrapper offHeart">
+						<div id="${map.value.reply_id}like" class="input-wrapper offHeart">
 							<c:if test="${not empty map.value.check}">
 								<script>
-									var threadID = ${map.value.id};
+									var threadID = ${map.value.reply_id};
 									actionToggle(threadID);
 								</script>
 							</c:if>
@@ -124,6 +125,7 @@
 					</div>
 					<!---- /like-area ---->
 				</c:forEach>
+				</div>
 			</article>
 			<!----right-aside---->
 			<aside class="right-aside">

@@ -68,25 +68,27 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p>　　MyPage</p></div>
-			<c:forEach var="map" items="${map}">
-				<p>
-					<br>
-					<c:out value="${map.value.comment}" />
-				</p>
-				<div class="likes-area">
-					<div id="${map.value.id}like" class="input-wrapper offHeart">
-						<c:if test="${not empty map.value.check}">
-							<script>
-								var threadID = ${map.value.id	};
-								actionToggle(threadID);
-							</script>
-						</c:if>
-						<a href="like?e=${map.value.id}" class="input-submit"></a>
+			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　MyPage</p></div>
+			<div class="tweet-area">
+				<c:forEach var="map" items="${map}">
+					<p>
+						<br>
+						<c:out value="${map.value.comment}" />
+					</p>
+					<div class="likes-area">
+						<div id="${map.value.id}like" class="input-wrapper offHeart">
+							<c:if test="${not empty map.value.check}">
+								<script>
+									var threadID = ${map.value.id	};
+									actionToggle(threadID);
+								</script>
+							</c:if>
+							<a href="like?e=${map.value.id}" class="input-submit"></a>
+						</div>
+						<p class="like_count">${map.value.likes}</p>
 					</div>
-					<p class="like_count">${map.value.likes}</p>
-				</div>
-			</c:forEach>
+				</c:forEach>
+			</div>
 			</article>
 			<!----right-aside---->
 			<aside class="right-aside">

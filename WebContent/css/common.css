@@ -17,9 +17,11 @@ body {
 	display: flex;
 }
 .title-area{
-	background-color: rgba(255, 255, 255, 50);
+	background-color: rgba(255, 255, 255, 0.95);
 	position: fixed;
 	padding: 10px;
+	margin-bottom: 10px;
+	width: 100%;
 }
 .title-text{
 	margin: 0;
@@ -33,6 +35,9 @@ body {
 	font-weight: bolder;
 	font-size: 18px;
 	display: inline;
+}
+.tweet-area{
+	margin-top: 50px;
 }
 /*------/main------*/
 /*--------left-aside-----------*/
