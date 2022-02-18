@@ -37,13 +37,6 @@
 <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-<div>
-	<p>${sb.name}</p>
-</div>
-	<p>${sb.text}</p>
-	<p>${sb.time}</p>
-	<p>${sb.tag}</p>
-	<p>${sb.userid}</p>
 
 	<div id="thread" class="thread_page">
 	<!---- input-box ---->
@@ -71,6 +64,8 @@
 			<aside class="left-aside">
 				<!-- ---left-side--- -->
 				<div class="left-wrapper">
+					<a class="skip-link" href="MainPage"><div class="logout-button skip-button">
+						<img class="MainPage-img skip-img" src="images/cloudylogo.jpg"></div></a>
 					<a class="skip-link" href="#top"><div class="top-button skip-button">
 						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
 					</div></a>
@@ -95,12 +90,12 @@
 			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
 				<div class="tweet-area">
 				<div>
-					<p>${user_name}</p>
+					<p>${sb.name}</p>
 				</div>
-				<p>${sb.text}</p>
-				<p>${sb.time}</p>
-				<p>${sb.tag}</p>
-				<p>${sb.userid}</p>
+					<p>${sb.text}</p>
+					<p>${sb.time}</p>
+					<p>${sb.tag}</p>
+					<p>${sb.userid}</p>
 
 				<c:forEach var="map" items="${map}">
 					<p>
@@ -127,7 +122,7 @@
 									actionToggle(threadID);
 								</script>
 							</c:if>
-							<a href="like?e=${map.value.id}" class="input-submit"></a>
+							<a href="likerep?e=${map.value.reply_id}" class="input-submit"></a>
 						</div>
 						<p class="like_count">${map.value.likes}</p>
 					</div>
