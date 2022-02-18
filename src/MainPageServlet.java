@@ -52,6 +52,7 @@ public class MainPageServlet extends HttpServlet {
         // 入力された値を取得
 
         String comment = request.getParameter("comment");
+        String tag = request.getParameter("tag");
 
         HttpSession session = request.getSession();//sessionを入手
         UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
@@ -61,6 +62,7 @@ public class MainPageServlet extends HttpServlet {
 
         bo.setComment(comment);
         bo.setUser_id(ub.getUserId());
+        bo.setTag(tag);
         // mysqlに格納
         AddCommentLogic acl = new AddCommentLogic();
         acl.executeAddComment(bo);
