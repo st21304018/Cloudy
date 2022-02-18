@@ -104,6 +104,14 @@
 		<servlet-name>threadpageservlet</servlet-name>
 		<url-pattern>/threadpageservlet</url-pattern>
 	</servlet-mapping>
+  	<servlet>
+  		<servlet-name>logout</servlet-name>
+  		<servlet-class>Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
 
 	<servlet>
 		<servlet-name>threadpage</servlet-name>
@@ -131,5 +139,4 @@
 		<servlet-name>mypage</servlet-name>
 		<url-pattern>/mypage</url-pattern>
 	</servlet-mapping>
-
 </web-app>
