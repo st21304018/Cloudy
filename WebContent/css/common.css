@@ -12,6 +12,9 @@ body {
 }
 .thread_page{
 	position: relative;
+	 width: 100%;
+	 z-index: 2147483647;
+	 min-height: 100%;
 }
 .main-page{
 	display: flex;
@@ -21,7 +24,7 @@ body {
 	position: fixed;
 	padding: 10px;
 	margin-bottom: 10px;
-	width: 100%;
+	width: 38.7%;
 }
 .title-text{
 	margin: 0;
@@ -247,7 +250,7 @@ body {
 	min-width: 600px;
 	border-radius: 16px;
 	top: 5%;
-	left: 30%;
+	left: 30.3%;
 	z-index: 1000;
 }
 .input_text_area{

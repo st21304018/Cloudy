@@ -70,7 +70,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　MyPage</p></div>
+			<div id="title" class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　MyPage</p></div>
 			<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
 					<a class="main-article" href="threadpageservlet?e=${map.value.id}">

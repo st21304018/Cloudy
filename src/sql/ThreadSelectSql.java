@@ -34,7 +34,6 @@ public class ThreadSelectSql {
 			sb.setUserid(rs.getString("user_id"));
 			sb.setTag(rs.getString("th_tag"));
 			sb.setName(new ThreadNamelogic().nameLogic(sb));
-			sb.setLikes(rs.getInt("th_likes"));
 			sb.setCheck(new LikeCheckLogic().likeRepLogic(sb, ubean));
 			cn.close();
 

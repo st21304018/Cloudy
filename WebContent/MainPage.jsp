@@ -20,6 +20,8 @@
 		target.style.backgroundColor = "rgba(255, 255, 255)";
 		var top = document.getElementById("top");
 		top.style.pointerEvents = "auto";
+		var title = document.getElementById("title");
+		title.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
 	}
 	function showForm() {
 		document.getElementById("box").style.display = "block";
@@ -27,6 +29,8 @@
 		target.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 		var top = document.getElementById("top");
 		top.style.pointerEvents = "none";
+		var title = document.getElementById("title");
+		title.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
 	}
 </script>
 <link rel="stylesheet" href="css/reaction.css">
@@ -85,7 +89,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div class="title-area"><p class="title-text">MainPage</p></div>
+			<div id="title" class="title-area"><p class="title-text">MainPage</p></div>
 				<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
 					<a class="main-article" href="threadpageservlet?e=${map.value.id}">
