@@ -17,13 +17,14 @@
 		target.classList.toggle('onHeart');
 		target.classList.toggle('offHeart');
 	}
-
 	function hideForm() {
 		document.getElementById("box").style.display = "none";
 		var target = document.getElementById("thread");
 		target.style.backgroundColor = "rgba(255, 255, 255)";
 		var top = document.getElementById("top");
 		top.style.pointerEvents = "auto";
+		var title = document.getElementById("title");
+		title.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
 	}
 	function showForm() {
 		document.getElementById("box").style.display = "block";
@@ -31,6 +32,8 @@
 		target.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 		var top = document.getElementById("top");
 		top.style.pointerEvents = "none";
+		var title = document.getElementById("title");
+		title.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
 	}
 </script>
 <link rel="stylesheet" href="css/reaction.css">
@@ -87,7 +90,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
+			<div id="title" class="title-area"><a class="title-link" href="MainPage">←</a><p class="title-text">　　Thread</p></div>
 				<div class="tweet-area">
 				<div class="side-time">
 					<div class="profile-area-2">
