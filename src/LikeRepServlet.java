@@ -27,14 +27,14 @@ public class LikeRepServlet extends HttpServlet {
 
 		if(check == null) {
 			System.out.println("いいねされていない");
-			String insertSql = "insert into cloudy_like values('"+ ub.getUserId() +"', '"+ bean.getReply_id() +"')";
+			String insertSql = "insert into cloudy_rep_like values('"+ ub.getUserId() +"', '"+ bean.getReply_id() +"')";
 			insert.insertSQL(insertSql);
 			IncrementLogic inc  = new IncrementLogic();
 			inc.incrementRepLogic(bean);
 			bean.setCheck("1");
 		}else {
 			System.out.println("いいねされている");
-			String deleteSql = "delete from cloudy_like where user_id = '"+ ub.getUserId() +"'";
+			String deleteSql = "delete from cloudy_rep_like where user_id = '"+ ub.getUserId() +"'";
 			insert.insertSQL(deleteSql);
 			DecrementLogic dec = new DecrementLogic();
 			dec.decrementRepLogic(bean);

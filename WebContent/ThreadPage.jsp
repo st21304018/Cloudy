@@ -90,7 +90,7 @@
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div id="title" class="title-area"><a class="title-link" href="#" onclick="window.history.back(); return false;">←</a><p class="title-text">　　Thread</p></div>
+			<div id="title" class="title-area"><a class="title-link" href="MainPage">←</a><p class="title-text">　　Thread</p></div>
 				<div class="tweet-area">
 				<div class="side-time">
 					<div class="profile-area-2">

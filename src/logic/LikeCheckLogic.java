@@ -14,7 +14,7 @@ public class LikeCheckLogic {
 		return ch;
 	}
 	public String likeRepLogic(SelectBean bean, UserBean ubean) {
-		String sql = "select count(*) from cloudy_like where user_id='"+ubean.getUserId()+"' and th_id="+ bean.getReply_id()+"";
+		String sql = "select count(*) from cloudy_rep_like where user_id='"+ubean.getUserId()+"' and reply_id="+ bean.getReply_id()+"";
 		UserCheck check = new UserCheck();
 		String ch = check.userCheck(sql);
 
