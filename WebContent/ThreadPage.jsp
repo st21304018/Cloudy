@@ -102,22 +102,6 @@
 					<p class="comment">${sb.text}</p>
 					<p class="tag">${sb.tag}</p>
 					<hr>
-<!-- <div class="side-time">
-					<div class="profile-area-2">
-					<img class="profile-img" src="images/profile_icon.png">
-					<div class="user-info">
-						<p class="userName">
-						<c:out value="${map.value.user_name}"/>
-						</p>
-						<p class="userId">
-						@<c:out value="${map.value.user_id}"/>
-						</p>
-					</div>
-					</div>
-					<p class="time">
-						<c:out value="${map.value.time}"/>
-					</p>
-					</div> -->
 				<c:forEach var="map" items="${map}">
 				<div class="reply">
 				<div class="side-time">
@@ -164,12 +148,6 @@
 			<!----right-aside---->
 			<aside class="right-aside">
 				<div class="right-wrapper">
-					<div class="serch-box">
-						<img src="images/search.png" class="search-img">
-						<form method="GET" action="search">
-							<div><input class="search-input" type="text" name="tag" placeholder="タグを検索"></div>
-						</form>
-					</div>
 				</div>
 			</aside>
 			<!----/right-aside---->
