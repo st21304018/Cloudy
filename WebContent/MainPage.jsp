@@ -5,40 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript">
-	function actionToggle(threadID) {
-		var id = threadID + 'like';
-		console.log(id);
-		var target = document.getElementById(id);
-		target.classList.toggle('onHeart');
-		target.classList.toggle('offHeart');
-	}
+<script>
+function actionToggle(threadID) {
+	var id = threadID + 'like';
+	console.log(id);
+	var target = document.getElementById(id);
+	target.classList.toggle('onHeart');
+	target.classList.toggle('offHeart');
+}
 
-	function hideForm() {
-		document.getElementById("box").style.display = "none";
-		var target = document.getElementById("thread");
-		target.style.backgroundColor = "rgba(255, 255, 255)";
-		var top = document.getElementById("top");
-		top.style.pointerEvents = "auto";
-		var title = document.getElementById("title");
-		title.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-	}
-	function showForm() {
-		document.getElementById("box").style.display = "block";
-		var target = document.getElementById("thread");
-		target.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-		var top = document.getElementById("top");
-		top.style.pointerEvents = "none";
-		var title = document.getElementById("title");
-		title.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
-	}
 </script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/MainPage.css">
 <title>Cloudy - メインページ</title>
 </head>
-
 <body>
 	<div id="thread" class="thread_page">
 		<!---- input-box ---->
@@ -49,11 +30,12 @@
 					<form action="MainPage" method="post" name="form1"
 						onSubmit="return check()">
 						<div class="input_area">
-							<textarea name="comment" class="input_text_area"
-							placeholder="コメントを入力" required></textarea>
+							<textarea id="input_comment" name="comment" class="input_text_area"
+							placeholder="コメントを入力" required></textarea><br>
 							<textarea name="tag" class="input_tag_area"
 							placeholder="タグを入力"></textarea>
-							<div>
+							<div class="commit-area">
+								<div class="count-area"><span id="num">0</span><span>/200</span></div>
 								<input class="submit-button" type="submit" value="comment">
 							</div>
 						</div>
@@ -149,6 +131,7 @@
 		</div>
 	</div>
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
 
 </html>
