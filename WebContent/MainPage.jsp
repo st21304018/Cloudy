@@ -50,7 +50,7 @@
 						onSubmit="return check()">
 						<div class="input_area">
 							<textarea name="comment" class="input_text_area"
-							placeholder="コメントを入力"></textarea>
+							placeholder="コメントを入力" required></textarea>
 							<textarea name="tag" class="input_tag_area"
 							placeholder="タグを入力"></textarea>
 							<div>

@@ -158,11 +158,11 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>searchrep</servlet-name>
+		<servlet-name>searchreply</servlet-name>
 		<servlet-class>SearchReplyServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>searchrep</servlet-name>
-		<url-pattern>/searchrep</url-pattern>
+		<servlet-name>searchreply</servlet-name>
+		<url-pattern>/searchreply</url-pattern>
 	</servlet-mapping>
 </web-app>

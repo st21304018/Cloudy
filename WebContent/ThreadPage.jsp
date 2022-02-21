@@ -51,7 +51,7 @@
 						onSubmit="return check()">
 						<div class="input_area">
 							<textarea name="text" class="input_text_area"
-							placeholder="コメントを入力"></textarea>
+							placeholder="コメントを入力" required></textarea>
 							<textarea name="tag" class="input_tag_area"
 							placeholder="タグを入力"></textarea>
 							<div>
@@ -148,6 +148,12 @@
 			<!----right-aside---->
 			<aside class="right-aside">
 				<div class="right-wrapper">
+					<div class="serch-box">
+						<img src="images/search.png" class="search-img">
+						<form method="GET" action="searchreply">
+							<div><input class="search-input" type="text" name="tag" placeholder="タグを検索"></div>
+						</form>
+					</div>
 				</div>
 			</aside>
 			<!----/right-aside---->

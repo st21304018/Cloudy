@@ -39,8 +39,7 @@ public class ThreadPageServlet extends HttpServlet {
 		ReplySelectSql rs = new ReplySelectSql();
 
 		String replysql = "Select reply_text,TO_CHAR(reply_date, 'YY/MM/DD hh24:mi')AS time,user_id,reply_tag,th_id,reply_id, reply_likes "
-
-				+ "from cloudy_reply where th_id = '" + threadid + "'";
+				+ "from cloudy_reply where th_id = '" + threadid + "' order by reply_id desc";
 
 		map = rs.replySelect(replysql, ub);
 
@@ -84,9 +83,9 @@ public class ThreadPageServlet extends HttpServlet {
 		Map<Integer, SelectBean> map = new LinkedHashMap<Integer, SelectBean>();
 		ReplySelectSql rs = new ReplySelectSql();
 
-		String replysql = "Select reply_text,TO_CHAR(reply_date, 'YY/MM/DD hh24:mi')AS time,user_id,reply_tag, th_id ,reply_id, reply_likes from cloudy_reply where th_id = '"
-				+ threadid + "'";
 
+		String replysql = "Select reply_text,TO_CHAR(reply_date, 'YY/MM/DD hh24:mi')AS time,user_id,reply_tag, th_id ,reply_id, reply_likes from cloudy_reply where th_id = '"
+				+ threadid + "' order by reply_id desc";
 
 		map = rs.replySelect(replysql, ub);
 
