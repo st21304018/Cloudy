@@ -58,7 +58,6 @@
 					<a class="skip-link" href="logout"><div class="logout-button skip-button">
 						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
 					</div></a>
-					<input type="button" class="putButton" onclick="showForm()" value="Comment">
 					<div class="profile-area">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
