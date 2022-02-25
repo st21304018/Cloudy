@@ -9,15 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Cloudy - リプライ</title>
-<script type="text/javascript">
-	function actionToggle(threadID) {
-		var id = threadID + 'like';
-		console.log(id);
-		var target = document.getElementById(id);
-		target.classList.toggle('onHeart');
-		target.classList.toggle('offHeart');
-	}
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/Reply.css">
@@ -52,17 +45,15 @@
 				<div class="left-wrapper">
 					<a class="skip-link" href="MainPage"><div class="skip-main">
 						<img class="cloudy-logo" src="images/cloudylogo.jpg"></div></a>
-					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
-					</div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
 						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
-					<a class="skip-link" href="logout"><div class="logout-button skip-button">
-						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
-					</div></a>
 					<input type="button" class="putButton" onclick="showForm()" value="Comment">
-					<div class="profile-area">
+
+					<div class="logout" title="ログアウト" onclick="logoutCheck()">
+						<img class="logout-img" src="images/logout.png" ></a>
+					</div>
+					<div class="profile-area" id="profile">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
 							<p class="profile-name">${account.name}</p>
@@ -113,10 +104,7 @@
 						<!---- like-area ---->
 						<div id="${map.value.reply_id}like" class="input-wrapper offHeart">
 							<c:if test="${not empty map.value.check}">
-								<script>
-									var threadID = ${map.value.reply_id};
-									actionToggle(threadID);
-								</script>
+								<script>actionToggle(${map.value.reply_id});</script>
 							</c:if>
 							<a href="likerep?e=${map.value.reply_id}" class="input-submit"></a>
 						</div>
@@ -138,11 +126,10 @@
 						</form>
 					</div>
 				</div>
+				<div class="pagetop" id="js-pagetop">↑</div>
 			</aside>
 			<!----/right-aside---->
 		</div>
 	</div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/common.js"></script>
 </html>

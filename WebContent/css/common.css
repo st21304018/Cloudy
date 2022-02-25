@@ -3,7 +3,7 @@
 /*-----main------*/
 html {
 	height:100%;
-	width: 100%
+	width: 100%;
 }
 body {
 	height:100%;
@@ -214,6 +214,28 @@ p{
 	padding-right: 49px;
 	padding-top: 12px;
 	padding-bottom: 12px;
+}
+.pagetop{
+	border: 2px solid #00BFFF;
+	background: #00BFFF;
+	color: #fff;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 1.5rem;
+	width: 3.3rem;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	border-radius: 3.3rem;
+	text-align: center;
+	cursor: pointer;
+	z-index: 1003040;
+}
+.pagetop:hover{
+	background: #fff;
+	border-color: #00BFFF;
+	color: #00BFFF;
+	transition: 0.3s;
 }
 /*---------/right-aside----------*/
 /*--------main-area-----------*/
