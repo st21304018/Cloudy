@@ -35,6 +35,9 @@ public class AddCommentSQL {
 
             System.out.println("Connected....");
 
+
+
+
             try {
             	String sql = "insert into cloudy_thread(th_id, th_text, th_tag,user_id) values(th_seq.nextval, ?, ?,?)";
 

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Board;
 import bean.UserBean;
+import logic.NewLineLogic;
 import main.AddCommentLogic;
 import main.FindCommentLogic;
 
@@ -57,10 +58,14 @@ public class MainPageServlet extends HttpServlet {
         HttpSession session = request.getSession();//sessionを入手
         UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
+
+
+        String commentNeo = NewLineLogic.htmlEscape(comment);
+        String commentNewline = commentNeo.replaceAll("[\n]", "<br>");
         //JavaBeansに格納
         Board bo = new Board();
 
-        bo.setComment(comment);
+        bo.setComment(commentNewline);
         bo.setUser_id(ub.getUserId());
         bo.setTag(tag);
         // mysqlに格納

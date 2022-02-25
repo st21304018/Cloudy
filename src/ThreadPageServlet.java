@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import bean.SelectBean;
 import bean.UserBean;
 import bean.textBean;
+import logic.NewLineLogic;
 import sql.ReplySelectSql;
 import sql.ThreadInsertSql;
 import sql.ThreadSelectSql;
@@ -70,8 +71,11 @@ public class ThreadPageServlet extends HttpServlet {
         	tag = "#" + tag;
         }
 
+		 String textNeo = NewLineLogic.htmlEscape(text);
+	     String textNewline = textNeo.replaceAll("[\n]", "<br>");
+
 		textBean bean = new textBean();
-		bean.setText(text);
+		bean.setText(textNewline);
 		bean.setTag(tag);
 
 		String sql = " insert into cloudy_reply(reply_id,reply_text,reply_tag,th_id,user_id) values(reply_seq.nextval,?,?,"

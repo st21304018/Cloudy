@@ -121,7 +121,7 @@
 					</p>
 					</div>
 					<p class="comment">
-						<c:out value="${map.value.text}" />
+						${map.value.text}
 					</p>
 					<p class="tag">
 						<c:out value="${map.value.tag}" />
