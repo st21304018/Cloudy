@@ -21,7 +21,7 @@ public class SearchServlet extends HttpServlet {
 
 		String tag = req.getParameter("tag");
 
-		String sql = "select th_id, th_text, th_likes, user_id,to_char(th_date,'hh24:mi')AS time,th_tag from cloudy_thread where th_tag = '#"+ tag +"' order by th_id desc";
+		String sql = "select th_id, th_text, th_likes, user_id,th_date,th_tag from cloudy_thread where th_tag = '#"+ tag +"' order by th_id desc";
 
 		SearchLogic search = new SearchLogic();
 		Map<Integer, Board> map = search.searchLogic(ub, sql);
