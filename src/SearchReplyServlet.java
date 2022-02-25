@@ -21,7 +21,7 @@ public class SearchReplyServlet extends HttpServlet {
 
 		String tag = req.getParameter("tag");
 
-		String sql = "Select reply_text,TO_CHAR(reply_date, 'hh24:mi')AS time,user_id,reply_tag, th_id ,reply_id, reply_likes from cloudy_reply where th_id = '"+threadid+"' and reply_tag  = '#"+ tag +"' order by reply_id desc";
+		String sql = "Select reply_text,reply_date,user_id,reply_tag, th_id ,reply_id, reply_likes from cloudy_reply where th_id = '"+threadid+"' and reply_tag  = '#"+ tag +"' order by reply_id desc";
 
 		SearchLogic search = new SearchLogic();
 		Map<Integer, SelectBean> map = search.searchReplyLogic(ub, sql);

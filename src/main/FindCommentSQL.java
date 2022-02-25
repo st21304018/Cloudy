@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -13,12 +15,17 @@ import bean.UserBean;
 import logic.LikeCheckLogic;
 import logic.UsernameLogic;
 
-public class FindCommentSQL {
+public class FindCommentSQL{
 
     public Map<Integer, Board> findcomment(UserBean ubean, String sql) {
 
         // id,name,commentを格納するリスト
         Map<Integer, Board> list = new LinkedHashMap<>();
+        Date d = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("YY/MM/dd");
+        SimpleDateFormat df2 = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat df3 = new SimpleDateFormat("YY/MM/dd HH:mm");
+        String sysdate = df.format(d);
 
 
         Connection con = null;
@@ -39,6 +46,7 @@ public class FindCommentSQL {
                     // sqlを送信
                     ResultSet rs = st.executeQuery(sql);
 
+
                     while (rs.next()) {
                         // DBから取り出したid,name,commentをJavaBeansにset
                         Board bo = new Board();
@@ -47,7 +55,12 @@ public class FindCommentSQL {
                         bo.setComment(rs.getString("th_text"));
                 		bo.setLikes(rs.getInt("th_likes"));
                 		bo.setUser_id(rs.getString("user_id"));
-                		bo.setTime(rs.getString("time"));
+                		Date time = rs.getDate("th_date");
+                		if(sysdate.equals(df.format(time))){
+                				bo.setTime(df2.format(time));
+                		}else {
+                			bo.setTime(df3.format(time));
+                		}
                 		bo.setTag(rs.getString("th_tag"));
                 		bo.setCheck(new LikeCheckLogic().likeLogic(bo, ubean));
                 		bo.setUser_name(new UsernameLogic().nameLogic(bo));

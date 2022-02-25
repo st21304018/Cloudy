@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,6 +20,11 @@ public class ReplySelectSql {
 	public Map<Integer,SelectBean> replySelect(String sql, UserBean ubean) {
 
 		Map<Integer,SelectBean> map = new LinkedHashMap<Integer,SelectBean>();
+        Date d = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("YY/MM/dd");
+        SimpleDateFormat df2 = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat df3 = new SimpleDateFormat("YY/MM/dd HH:mm");
+        String sysdate = df.format(d);
 
 		try {
 
@@ -39,7 +46,12 @@ public class ReplySelectSql {
 
 				SelectBean sb = new SelectBean();
 				sb.setText(rs.getString("reply_text"));
-				sb.setTime(rs.getString("time"));
+        		Date time = rs.getDate("reply_date");
+        		if(sysdate.equals(df.format(time))){
+        				sb.setTime(df2.format(time));
+        		}else {
+        			sb.setTime(df3.format(time));
+        		}
 				sb.setTag(rs.getString("reply_tag"));
 				sb.setTh_id(rs.getInt("th_id"));
 				sb.setReply_id(rs.getInt("reply_id"));

@@ -120,6 +120,7 @@
 						<c:out value="${map.value.time}" />
 					</p>
 					</div>
+					<p class="reply-mark">@${sb.userid}さんに返信</p>
 					<p class="comment">
 						<c:out value="${map.value.text}" />
 					</p>
