@@ -20,6 +20,14 @@ function showForm() {
 	title.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
 }
 
+function actionToggle(threadID) {
+	var id = threadID + 'like';
+	console.log('a');
+	var target = document.getElementById(id);
+	target.classList.toggle('onHeart');
+	target.classList.toggle('offHeart');
+}
+
 function logoutCheck(){
 	var result = confirm('ログアウトしてよろしいですか？');
 

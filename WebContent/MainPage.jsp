@@ -5,16 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script>
-function actionToggle(threadID) {
-	var id = threadID + 'like';
-	console.log(id);
-	var target = document.getElementById(id);
-	target.classList.toggle('onHeart');
-	target.classList.toggle('offHeart');
-}
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/MainPage.css">
@@ -103,9 +95,7 @@ function actionToggle(threadID) {
 						<!---- like-area ---->
 						<div id="${map.value.id}like" class="input-wrapper offHeart">
 							<c:if test="${not empty map.value.check}">
-								<script>
-									actionToggle(${map.value.id});
-								</script>
+								<script>actionToggle(${map.value.id});</script>
 							</c:if>
 							<a href="like?e=${map.value.id}" class="input-submit"></a>
 							<p class="like_count">${map.value.likes}</p>
@@ -131,7 +121,5 @@ function actionToggle(threadID) {
 		</div>
 	</div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/common.js"></script>
 
 </html>
