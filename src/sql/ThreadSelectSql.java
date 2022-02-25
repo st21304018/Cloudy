@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import bean.SelectBean;
 import bean.UserBean;
@@ -16,6 +18,11 @@ public class ThreadSelectSql {
 
 	public SelectBean ThreadText(String sql, UserBean ubean) {
 
+        Date d = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("YY/MM/dd");
+        SimpleDateFormat df2 = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat df3 = new SimpleDateFormat("YY/MM/dd HH:mm");
+        String sysdate = df.format(d);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -30,7 +37,12 @@ public class ThreadSelectSql {
 
 			rs.next();
 			sb.setText(rs.getString("th_text"));
-			sb.setTime(rs.getString("time"));
+    		Date time = rs.getDate("th_date");
+    		if(sysdate.equals(df.format(time))){
+    				sb.setTime(df2.format(time));
+    		}else {
+    			sb.setTime(df3.format(time));
+    		}
 			sb.setUserid(rs.getString("user_id"));
 			sb.setTag(rs.getString("th_tag"));
 			sb.setName(new ThreadNamelogic().nameLogic(sb));
