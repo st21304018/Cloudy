@@ -5,10 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/MyPage.css">
 <link rel="stylesheet" href="css/common.css">
-<title>Cloudy - マイページ</title>
+<title>Cloudy - マイポスト</title>
 </head>
 <body>
 
@@ -41,24 +43,23 @@
 					<a class="skip-link" href="MainPage"><div class="skip-main">
 						<img class="cloudy-logo" src="images/cloudylogo.jpg"></div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
-						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPosts</p>
 					</div></a>
-
-					<div class="logout" title="ログアウト" onclick="logoutCheck()">
-						<img class="logout-img" src="images/logout.png" ></a>
-					</div>
 					<div class="profile-area" id="profile">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
 							<p class="profile-name">${account.name}</p>
 							<p class="profile-id">@${account.userId}</p>
 						</div>
+						<div class="logout" title="ログアウト" onclick="logoutCheck()">
+							<img class="logout-img" src="images/logout.png" ></a>
+						</div>
 					</div>
 				</div>
 			</aside>
 			<!-- ---/left-side--- -->
 			<article class="main-area">
-			<div id="title" class="title-area"><a class="title-link" href="MainPage">←</a><p class="title-text">　　MyPage</p></div>
+			<div id="title" class="title-area"><a class="title-link" href="MainPage">←</a><p class="title-text">　　MyPost</p></div>
 			<div class="tweet-area">
 				<c:forEach var="map" items="${map}">
 					<a class="main-article" href="threadpageservlet?e=${map.value.id}">

@@ -104,13 +104,11 @@ p{
 .logout{
 	display: inline;
 	position: absolute;
-	bottom: 11.8%;
 	right: 24%;
+	z-index: 100;
+	cursor: pointer;
 }
-.logout-img:hover{
-	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 50%;
-}
+
 .logout-link{
 	display: inline;
 }

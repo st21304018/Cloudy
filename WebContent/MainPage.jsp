@@ -43,18 +43,18 @@
 					<a class="skip-link" href="MainPage"><div class="skip-main">
 						<img class="cloudy-logo" src="images/cloudylogo.jpg"></div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
-						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
+						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPosts</p>
 					</div></a>
 					<input type="button" class="putButton" onclick="showForm()" value="Comment">
 
-					<div class="logout" title="ログアウト" onclick="logoutCheck()">
-						<img class="logout-img" src="images/logout.png" ></a>
-					</div>
 					<div class="profile-area" id="profile">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
 							<p class="profile-name">${account.name}</p>
 							<p class="profile-id">@${account.userId}</p>
+						</div>
+						<div class="logout" title="ログアウト" onclick="logoutCheck()">
+							<img class="logout-img" src="images/logout.png" ></a>
 						</div>
 					</div>
 				</div>
