@@ -96,7 +96,7 @@
 					</div>
 					<p class="reply-mark">@${sb.userid}さんに返信</p>
 					<p class="comment">
-						<c:out value="${map.value.text}" />
+						${map.value.text}
 					</p>
 					<p class="tag">
 						<c:out value="${map.value.tag}" />

@@ -80,9 +80,10 @@
 					<p class="time">
 						<c:out value="${map.value.time}"/>
 					</p>
+
 					</div>
 						<p class="comment">
-						<c:out value="${map.value.comment}"/>
+						 ${map.value.comment}
 						</p>
 						<p class="tag">
 						<c:out value="${map.value.tag}"/>

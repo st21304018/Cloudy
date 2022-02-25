@@ -26,7 +26,9 @@ public class ThreadInsertSql{
 		//select文
 
 		ps = con.prepareStatement(sql);
-
+		
+		
+		
 		ps.setString(1, bean.getText());
 		ps.setString(2, bean.getTag());
 
