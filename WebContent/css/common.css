@@ -3,12 +3,15 @@
 /*-----main------*/
 html {
 	height:100%;
-	width: 100%
+	width: 100%;
 }
 body {
 	height:100%;
 	width: 100%;
 	margin: 0;
+}
+p{
+	word-break: break-all;
 }
 .thread_page{
 	position: relative;
@@ -69,7 +72,7 @@ body {
 .skip-main{
 	padding-top: 25px;
 	padding-bottom: 25px;
-	margin-bottom: 18px;
+	margin-bottom: 60px;
 	position: relative;
 }
 .skip-button:hover{
@@ -97,6 +100,25 @@ body {
 	height: 30px;
 	display: inline;
 	position: absolute;
+}
+.logout{
+	display: inline;
+	position: absolute;
+	bottom: 11.8%;
+	right: 24%;
+}
+.logout-img:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+}
+.logout-link{
+	display: inline;
+}
+.logout-img{
+	height: 35px;
+	display: inline;
+	position: absolute;
+	padding: 5px;
 }
 .cloudy-logo {
 	top: 17%;
@@ -193,6 +215,28 @@ body {
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
+.pagetop{
+	border: 2px solid #00BFFF;
+	background: #00BFFF;
+	color: #fff;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 1.5rem;
+	width: 3.3rem;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	border-radius: 3.3rem;
+	text-align: center;
+	cursor: pointer;
+	z-index: 1003040;
+}
+.pagetop:hover{
+	background: #fff;
+	border-color: #00BFFF;
+	color: #00BFFF;
+	transition: 0.3s;
+}
 /*---------/right-aside----------*/
 /*--------main-area-----------*/
 .main-area{
@@ -222,13 +266,25 @@ body {
 	border: none;
 	outline: none;
 	z-index: 100000;
-	font-size: 20px;
-	bottom: 24%;
-	right: 6%;
 	position: absolute;
+	font-size: 20px;
+	left: 8%;
+	border-bottom: 1px solid #C0C0C0;
 }
 .input_tag_area::placeholder{
 	font-size: 20px;
+}
+.count-area{
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 11px;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+.commit-area{
+	display: flex;
+	text-align: right;
+	margin-left: 67%;
+	margin-top: 2%;
 }
 .input_box_close:hover{
 	background-color: rgba(0, 0, 0, 0.2);
@@ -248,7 +304,7 @@ body {
 	position: absolute;
 	max-width: 80vw;
 	max-height: 90vh;
-	min-height: 250px;
+	min-height: 270px;
 	min-width: 600px;
 	border-radius: 16px;
 	top: 5%;
@@ -261,7 +317,6 @@ body {
 	resize: none;
 	border: none;
 	outline: none;
-	text-align: bottom;
 	margin-top: 20px;
 	height: 130px;
 	width: 500px;
@@ -285,11 +340,22 @@ body {
 	padding-bottom: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
+	bottom: 2%;
+	display: inline;
 }
 .submit-button:hover{
 	background: #fff;
 	border-color: #00BFFF;
 	color: #00BFFF;
 	transition: 0.3s;
+}
+.error-submit{
+	border: 2px solid #ff0000;
+	background: #ff0000;
+}
+.error-submit:hover{
+	background: #fff;
+	border-color: #ff0000;
+	color: #ff0000;
 }
 /*-----------/tweet-box--------------*/

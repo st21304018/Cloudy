@@ -5,15 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript">
-	function actionToggle(threadID) {
-		var id = threadID + 'like';
-		console.log(id);
-		var target = document.getElementById(id);
-		target.classList.toggle('onHeart');
-		target.classList.toggle('offHeart');
-	}
-</script>
 <link rel="stylesheet" href="css/reaction.css">
 <link rel="stylesheet" href="css/MyPage.css">
 <link rel="stylesheet" href="css/common.css">
@@ -49,16 +40,14 @@
 				<div class="left-wrapper">
 					<a class="skip-link" href="MainPage"><div class="skip-main">
 						<img class="cloudy-logo" src="images/cloudylogo.jpg"></div></a>
-					<a class="skip-link" href="#top"><div class="top-button skip-button">
-						<p class="top-img skip-img">↑</p><p class="skip-top skip-text">Top</p>
-					</div></a>
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
 						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
-					<a class="skip-link" href="logout"><div class="logout-button skip-button">
-						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
-					</div></a>
-					<div class="profile-area">
+
+					<div class="logout" title="ログアウト" onclick="logoutCheck()">
+						<img class="logout-img" src="images/logout.png" ></a>
+					</div>
+					<div class="profile-area" id="profile">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
 							<p class="profile-name">${account.name}</p>
@@ -110,6 +99,7 @@
 						</form>
 					</div>
 				</div>
+			<div class="pagetop" id="js-pagetop">↑</div>
 			</aside>
 			<!----/right-aside---->
 		</div>
