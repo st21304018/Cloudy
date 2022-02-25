@@ -101,6 +101,25 @@ p{
 	display: inline;
 	position: absolute;
 }
+.logout{
+	display: inline;
+	position: absolute;
+	bottom: 11.8%;
+	right: 24%;
+}
+.logout-img:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+}
+.logout-link{
+	display: inline;
+}
+.logout-img{
+	height: 35px;
+	display: inline;
+	position: absolute;
+	padding: 5px;
+}
 .cloudy-logo {
 	top: 17%;
 	padding-left: 5px;

@@ -56,11 +56,12 @@ function actionToggle(threadID) {
 					<a class="skip-link" href="MyPage"><div class="mypage-button skip-button">
 						<img class="mypage-img skip-img" src="images/profile-skip.png"><p class="skip-mypage skip-text">MyPage</p>
 					</div></a>
-					<a class="skip-link" href="logout"><div class="logout-button skip-button">
-						<img class="logout-img skip-img" src="images/logout.png"><p class="skip-logout skip-text">Logout</p>
-					</div></a>
 					<input type="button" class="putButton" onclick="showForm()" value="Comment">
-					<div class="profile-area">
+
+					<div class="logout" title="ログアウト" onclick="logoutCheck()">
+						<img class="logout-img" src="images/logout.png" ></a>
+					</div>
+					<div class="profile-area" id="profile">
 						<img class="profile-img" src="images/profile_icon.png">
 						<div class="user-info">
 							<p class="profile-name">${account.name}</p>
@@ -103,8 +104,7 @@ function actionToggle(threadID) {
 						<div id="${map.value.id}like" class="input-wrapper offHeart">
 							<c:if test="${not empty map.value.check}">
 								<script>
-									var threadID = ${map.value.id};
-									actionToggle(threadID);
+									actionToggle(${map.value.id});
 								</script>
 							</c:if>
 							<a href="like?e=${map.value.id}" class="input-submit"></a>

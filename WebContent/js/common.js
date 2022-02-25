@@ -19,6 +19,14 @@ function showForm() {
 	var title = document.getElementById("title");
 	title.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
 }
+
+function logoutCheck(){
+	var result = confirm('ログアウトしてよろしいですか？');
+
+	if(result){
+		window.location.href = 'logout';
+	}
+}
 $(function () {
 	$("#input_comment").on('keydown keyup keypress change', function () {
 		let count = $(this).val().length;
