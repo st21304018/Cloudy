@@ -11,7 +11,9 @@
 			<img class="cloudy-logo" src="images/cloudylogo.jpg" alt="クラウディのロゴ">
 		</div>
 		<h1 class="resultTitle">登録完了</h1>
-		<a class="loginLink" href="Login.jsp">ログインページに戻る</a>
+		<div class="blank">
+		<a class="button" href="Login.jsp">ログインページに戻る</a>
+		</div>
 	</div>
 </body>
 </html>
