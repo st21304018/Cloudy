@@ -66,8 +66,6 @@ public class MainPageServlet extends HttpServlet {
         HttpSession session = request.getSession();//sessionを入手
         UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
-
-
         String commentNeo = NewLineLogic.htmlEscape(comment);
         String commentNewline = commentNeo.replaceAll("[\n]", "<br>");
         //JavaBeansに格納
