@@ -165,13 +165,4 @@
 		<servlet-name>searchreply</servlet-name>
 		<url-pattern>/searchreply</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>usererror</servlet-name>
-		<jsp-file>/UserError.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>usererror</servlet-name>
-		<url-pattern>/usererror</url-pattern>
-	</servlet-mapping>
 </web-app>

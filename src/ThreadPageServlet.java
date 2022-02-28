@@ -23,15 +23,11 @@ public class ThreadPageServlet extends HttpServlet {
 			throws ServletException, IOException {
 		SelectBean sb = new SelectBean();
 
+
 		String threadid = req.getParameter("e");
 
 		HttpSession session = req.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
-
-		if(ub == null) {
-			RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
-			dispatcher.forward(req, res);
-		}
 
 		String sql = "select th_text,th_date,th_tag,user_id from cloudy_thread where th_id = '" + threadid + "'";
 
