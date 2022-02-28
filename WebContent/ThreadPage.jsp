@@ -27,7 +27,7 @@
 						<div class="input_area">
 							<textarea id="input_comment" name="text" class="input_text_area"
 							placeholder="コメントを入力" required></textarea><br>
-							<textarea name="tag" class="input_tag_area"
+							<textarea name="tag" class="input_tag_area" maxlength="9"
 							placeholder="タグを入力"></textarea>
 							<div class="commit-area">
 								<div class="count-area"><span id="num">0</span><span>/200</span></div>
