@@ -34,12 +34,20 @@ public class MainPageServlet extends HttpServlet {
 
         // 既存のコメントを確認
         FindCommentLogic fcl = new FindCommentLogic();
-        Map<Integer, Board> map = fcl.executeFindComment(ub);
+        RequestDispatcher rd =request.getRequestDispatcher("mainpage");
+
+
+        Map<Integer, Board> map = null;
+
+        try {
+        	map = fcl.executeFindComment(ub);
+        }catch(NullPointerException e) {
+        	rd =request.getRequestDispatcher("usererror");
+        }
 
         // セッションスコープにコメントリストを保存
         session.setAttribute("map", map);
 
-        RequestDispatcher rd =request.getRequestDispatcher("mainpage");
         rd.forward(request, response);
     }
 
