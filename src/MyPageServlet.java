@@ -15,13 +15,13 @@ import bean.UserBean;
 @WebServlet("/MyPageServlet")
 public class MyPageServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 
 		//リスナークラスに移動したい
-		request.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding("UTF-8");
 
-		HttpSession session = request.getSession();
+		HttpSession session = req.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
 		// 既存のコメントを確認
@@ -31,9 +31,9 @@ public class MyPageServlet extends HttpServlet {
 		// セッションスコープにコメントリストを保存
 		session.setAttribute("map", map);
 		String userName = ub.getName();
-		request.setAttribute("name", userName);
+		req.setAttribute("name", userName);
 
-		RequestDispatcher rd = request.getRequestDispatcher("mypage");
-		rd.forward(request, response);
+		RequestDispatcher rd = req.getRequestDispatcher("mypage");
+		rd.forward(req, res);
 	}
 }

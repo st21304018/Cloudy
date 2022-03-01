@@ -13,17 +13,14 @@ import sql.LoginDB;
 
 @WebServlet("/AccountSearchServlet")
 public class AccountSearchServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	public AccountSearchServlet() {
 		super();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String userId = request.getParameter("userId");
-		String pass = request.getParameter("pass");
+		String userId = req.getParameter("userId");
+		String pass = req.getParameter("pass");
 
 		pass = hash.Hashing.hashing(pass);
 
@@ -39,15 +36,15 @@ public class AccountSearchServlet extends HttpServlet {
 
 		if (returnUb != null) {
 			// セッションにアカウント情報＆ロールを登録
-			HttpSession session = request.getSession();
+			HttpSession session = req.getSession();
 			session.setAttribute("account", returnUb);
 
-			RequestDispatcher rd = request.getRequestDispatcher("LoginSuccess.jsp");
-			rd.forward(request, response);
+			RequestDispatcher rd = req.getRequestDispatcher("LoginSuccess.jsp");
+			rd.forward(req, res);
 
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("LoginError.jsp");
-			rd.forward(request, response);
+			RequestDispatcher rd = req.getRequestDispatcher("LoginError.jsp");
+			rd.forward(req, res);
 		}
 	}
 }

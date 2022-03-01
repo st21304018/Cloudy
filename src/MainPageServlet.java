@@ -24,17 +24,17 @@ import main.FindCommentLogic;
 public class MainPageServlet extends HttpServlet {
 
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         //リスナークラスに移動したい
-        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
 
-        HttpSession session = request.getSession();
+        HttpSession session = req.getSession();
         UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
         // 既存のコメントを確認
         FindCommentLogic fcl = new FindCommentLogic();
-        RequestDispatcher rd =request.getRequestDispatcher("mainpage");
+        RequestDispatcher rd =req.getRequestDispatcher("mainpage");
 
 
         Map<Integer, Board> map = null;
@@ -42,28 +42,28 @@ public class MainPageServlet extends HttpServlet {
         try {
         	map = fcl.executeFindComment(ub);
         }catch(NullPointerException e) {
-        	rd =request.getRequestDispatcher("usererror");
+        	rd =req.getRequestDispatcher("usererror");
         }
 
         // セッションスコープにコメントリストを保存
         session.setAttribute("map", map);
 
-        rd.forward(request, response);
+        rd.forward(req, res);
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
 
         // 入力された値を取得
 
-        String comment = request.getParameter("comment");
-        String tag = request.getParameter("tag");
+        String comment = req.getParameter("comment");
+        String tag = req.getParameter("tag");
 
-        HttpSession session = request.getSession();//sessionを入手
+        HttpSession session = req.getSession();//sessionを入手
         UserBean ub = (UserBean) session.getAttribute("account");//beanを入手
 
         String commentNeo = NewLineLogic.htmlEscape(comment);
@@ -83,11 +83,11 @@ public class MainPageServlet extends HttpServlet {
         Map<Integer, Board> map = fcl.executeFindComment(ub);
 
         // セッションスコープにコメントリストを保存
-        HttpSession commentSession = request.getSession();
+        HttpSession commentSession = req.getSession();
         commentSession.setAttribute("map", map);
 
-        RequestDispatcher rd =request.getRequestDispatcher("mainpage");
-        rd.forward(request, response);
+        RequestDispatcher rd =req.getRequestDispatcher("mainpage");
+        rd.forward(req, res);
 
     }
 
