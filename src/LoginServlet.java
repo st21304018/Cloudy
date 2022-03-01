@@ -12,26 +12,25 @@ import bean.UserBean;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	public LoginServlet() {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 
 		// セッションからログイン情報を取得
-		HttpSession session = request.getSession();
+		HttpSession session = req.getSession();
 		UserBean ub = (UserBean) session.getAttribute("account");
 
-		RequestDispatcher rd = request.getRequestDispatcher("mainPage");
-		rd.forward(request, response);
+		RequestDispatcher rd = req.getRequestDispatcher("mainPage");
+		rd.forward(req, res);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 
-		doGet(request, response);
+		doGet(req, res);
 	}
 }
